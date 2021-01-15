@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>School Management - Secondary school</title>
+
+    <!-- Custom fonts for this template -->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
+
+    <!-- Custom styles for this template -->
+    <link href="css/sb-admin-2.min.css" rel="stylesheet" />
+
+    <!-- Custom styles for this page -->
+    <link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet" />
+  </head>
+
+  <body id="page-top">
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+      <!-- Sidebar -->
+      <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+        <!-- Sidebar - Brand -->
+        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+          <img src="img/banner-major-edu.png" style="width: 99%" />
+        </a>
+
+        <!-- Divider -->
+        <hr class="sidebar-divider my-0" />
+
+        <!-- Nav Item - Dashboard -->
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">
+            <i class="fas fa-fw fa-tachometer-alt"></i>
+            <span>Dashboard</span>
+          </a>
+        </li>
+
+        <!-- Divider -->
+        <hr class="sidebar-divider" />
+
+        <!-- Heading -->
+        <div class="sidebar-heading">My Work</div>
+
+        <!-- Nav Item - Pages Collapse Menu -->
+        <li class="nav-item">
+          <a class="nav-link collapsed" href="https://www.figma.com/proto/flTpULC7t7Vb6S0YGsJbfA/Major?node-id=142%3A2&scaling=min-zoom">
+            <i class="fas fa-calendar-alt"></i>
+            <span>Workplan</span>
+          </a>
+        </li>
+
+        <!-- Divider -->
+        <hr class="sidebar-divider" />
+
+        <!-- Heading -->
+        <div class="sidebar-heading">Management</div>
+
+        <!-- Nav Item - Pages Collapse Menu -->
+        <li class="nav-item active">
+          <a class="nav-link collapsed" href="school-mgt-1.html">
+            <i class="fas fa-school"></i>
+            <span>Schools</span>
+          </a>
+        </li>
+
+        <!-- Nav Item - Charts -->
+        <li class="nav-item">
+          <a class="nav-link" href="task-mgt-my.html">
+            <i class="fas fa-tasks"></i>
+            <span>Tasks</span></a
+          >
+        </li>
+
+        <!-- Nav Item - Tables -->
+        <li class="nav-item">
+          <a class="nav-link" href="salesman-mgt.html">
+            <i class="fas fa-user-alt"></i>
+            <span>Salesmen</span></a
+          >
+        </li>
+
+        <!-- Divider -->
+        <hr class="sidebar-divider d-none d-md-block" />
+
+        <!-- Sidebar Toggler (Sidebar) -->
+        <div class="text-center d-none d-md-inline">
+          <button class="rounded-circle border-0" id="sidebarToggle"></button>
+        </div>
+      </ul>
+      <!-- End of Sidebar -->
+
+      <!-- Content Wrapper -->
+      <div id="content-wrapper" class="d-flex flex-column">
+        <!-- Main Content -->
+        <div id="content">
+          <!-- Topbar -->
+          <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+            <!-- Topbar Navbar -->
+            <ul class="navbar-nav ml-auto">
+              <!-- Nav Item - Alerts -->
+              <li class="nav-item dropdown no-arrow mx-1">
+                <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <i class="fas fa-bell fa-fw"></i>
+                  <!-- Counter - Alerts -->
+                  <span class="badge badge-danger badge-counter">3+</span>
+                </a>
+                <!-- Dropdown - Alerts -->
+                <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="alertsDropdown">
+                  <h6 class="dropdown-header">Alerts Center</h6>
+                  <a class="dropdown-item d-flex align-items-center" href="#">
+                    <div class="mr-3">
+                      <div class="icon-circle bg-primary">
+                        <i class="fas fa-file-alt text-white"></i>
+                      </div>
+                    </div>
+                    <div>
+                      <div class="small text-gray-500">December 12, 2019</div>
+                      <span class="font-weight-bold">A new monthly report is ready to download!</span>
+                    </div>
+                  </a>
+                  <a class="dropdown-item d-flex align-items-center" href="#">
+                    <div class="mr-3">
+                      <div class="icon-circle bg-success">
+                        <i class="fas fa-donate text-white"></i>
+                      </div>
+                    </div>
+                    <div>
+                      <div class="small text-gray-500">December 7, 2019</div>
+                      $290.29 has been deposited into your account!
+                    </div>
+                  </a>
+                  <a class="dropdown-item d-flex align-items-center" href="#">
+                    <div class="mr-3">
+                      <div class="icon-circle bg-warning">
+                        <i class="fas fa-exclamation-triangle text-white"></i>
+                      </div>
+                    </div>
+                    <div>
+                      <div class="small text-gray-500">December 2, 2019</div>
+                      Spending Alert: We've noticed unusually high spending for your account.
+                    </div>
+                  </a>
+                  <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
+                </div>
+              </li>
+
+              <div class="topbar-divider d-none d-sm-block"></div>
+
+              <!-- Nav Item - User Information -->
+              <li class="nav-item dropdown no-arrow">
+                <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <span class="mr-2 d-none d-lg-inline text-gray-600 small">Phạm Duy Tiến</span> &nbsp;
+                  <img class="img-profile rounded-circle" src="img/undraw_profile.svg" />
+                </a>
+                <!-- Dropdown - User Information -->
+                <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+                  <a class="dropdown-item" href="#">
+                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                    Profile
+                  </a>
+                  <a class="dropdown-item" href="#">
+                    <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
+                    Settings
+                  </a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="login.html">
+                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                    Logout
+                  </a>
+                </div>
+              </li>
+            </ul>
+          </nav>
+          <!-- End of Topbar -->
+
+          <!-- Begin Page Content -->
+          <div class="container-fluid">
+            <!-- Page Heading -->
+            <h1 class="h3 mb-2 text-gray-800">School Management</h1>
+
+            <!-- Quick Filter School level -->
+            <div style="width: 130px; margin-right: 7px; display: inline-block">
+              <a href="school-mgt-1.html">
+                <button style="width: 100%">Tiểu học</button>
+              </a>
+            </div>
+            <div style="width: 130px; margin-right: 7px; display: inline-block">
+              <a href="school-mgt-2.html">
+                <button style="width: 100%; background-color: rgb(111, 145, 255); color: whitesmoke">THCS</button>
+              </a>
+            </div>
+            <div style="width: 130px; display: inline-block">
+              <a href="school-mgt-3.html">
+                <button style="width: 100%">THPT</button>
+              </a>
+            </div>
+            <br />
+            <!-- DataTales Example -->
+            <div class="card shadow mb-4" style="width: 100%; margin-top: 22px; display: block; float: none">
+              <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">Trung học cơ sở</h6>
+              </div>
+              <div class="card-body">
+                <div class="filters">
+                  <div class="form-group" style="width: 17%; display: inline-block; margin-right: 10px">
+                    <label class="form-label">School type</label>
+                    <select class="custom-select">
+                      <option selected>Tất cả</option>
+                      <option>Công lập</option>
+                      <option>Ngoài công lập</option>
+                    </select>
+                  </div>
+                  <div class="form-group" style="width: 17%; display: inline-block; margin-right: 10px">
+                    <label class="form-label">District</label>
+                    <select class="custom-select">
+                      <option selected>Tất cả</option>
+                      <option>Quận 1</option>
+                      <option>Quận 2</option>
+                      <option>Quận 3</option>
+                      <option>Quận 4</option>
+                      <option>Quận 5</option>
+                      <option>Quận 6</option>
+                      <option>Quận 7</option>
+                      <option>Quận 8</option>
+                      <option>Quận 9</option>
+                      <option>Quận 10</option>
+                      <option>Quận 11</option>
+                      <option>Quận 12</option>
+                      <option>Quận Bình Tân</option>
+                      <option>Quận Bình Thạnh</option>
+                      <option>Quận Gò Vấp</option>
+                      <option>Quận Phú Nhuận</option>
+                      <option>Quận Tân Bình</option>
+                      <option>Quận Tân Phú</option>
+                      <option>Quận Thủ Đức</option>
+                      <option>Huyện Bình Chánh</option>
+                      <option>Huyện Cần Giờ</option>
+                      <option>Huyện Củ Chi</option>
+                      <option>Huyện Hóc Môn</option>
+                      <option>Huyện Nhà Bè</option>
+                    </select>
+                  </div>
+                  <div style="width: 17%; display: inline-block">
+                    <label class="form-label">Status</label>
+                    <select class="custom-select">
+                      <option selected>Tất cả</option>
+                      <option>Old</option>
+                      <option>New</option>
+                    </select>
+                  </div>
+
+                  <div class="action-buttons" style="display: inline-block; margin-left: 292px">
+                    <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#addModal"><i class="fas fa-plus"></i> &nbsp;Add</button>&nbsp;
+                    <button class="btn btn-outline-primary"><i class="fas fa-file-export"></i>&nbsp;Export</button>
+                  </div>
+                </div>
+                <br />
+                <div class="table-responsive">
+                  <table class="table table-striped table-bordered dt-responsive" id="dataTable" width="100%" cellspacing="0">
+                    <thead class="thead-dark">
+                      <tr>
+                        <th>No.</th>
+                        <th>School name</th>
+                        <th>Type</th>
+                        <th>District</th>
+                        <th>Address</th>
+                        <th>Contact</th>
+                        <th>Representor</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>1</td>
+                        <td><a href="school-detail.html">Trần Quang Khải</a></td>
+                        <td>Công lập</td>
+                        <td>1</td>
+                        <td>68/29B Trần Quang Khải, P.Tân Định</td>
+                        <td>038484288</td>
+                        <td><a href="principle-detail.html">Hồ Quang Tuấn</a></td>
+                        <td>New</td>
+                        <td>
+                          <a href="school-detail.html"
+                            ><button class="btn-success"><i class="fas fa-pen"></i></button
+                          ></a>
+                          <button class="btn-danger"><i class="fas fa-trash-alt"></i></button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>2</td>
+                        <td><a href="school-detail.html">Hàm Tử</a></td>
+                        <td>Công lập</td>
+                        <td>5</td>
+                        <td>750-752 Võ Văn Kiệt, P.1h</td>
+                        <td>038484288</td>
+                        <td><a href="principle-detail.html">Lưu Nguyễn Thanh Phong</a></td>
+                        <td>New</td>
+                        <td>
+                          <a href="school-detail.html"
+                            ><button class="btn-success"><i class="fas fa-pen"></i></button
+                          ></a>
+                          <button class="btn-danger"><i class="fas fa-trash-alt"></i></button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>3</td>
+                        <td><a href="school-detail.html">Trần Bình Trọng</a></td>
+                        <td>Công lập</td>
+                        <td>5</td>
+                        <td>120 Trần Bình Trọng, P.2</td>
+                        <td>038484288</td>
+                        <td><a href="principle-detail.html">Phạm Thị Kim Loan</a></td>
+                        <td>New</td>
+                        <td>
+                          <a href="school-detail.html"
+                            ><button class="btn-success"><i class="fas fa-pen"></i></button
+                          ></a>
+                          <button class="btn-danger"><i class="fas fa-trash-alt"></i></button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>4</td>
+                        <td><a href="school-detail.html">Văn Lang</a></td>
+                        <td>Ngoài công lập</td>
+                        <td>1</td>
+                        <td>84 Tân Hưng, P.12</td>
+                        <td>038484288</td>
+                        <td><a href="principle-detail.html">Nguyễn Nguyệt Lạng</a></td>
+                        <td>New</td>
+                        <td>
+                          <a href="school-detail.html"
+                            ><button class="btn-success"><i class="fas fa-pen"></i></button
+                          ></a>
+                          <button class="btn-danger"><i class="fas fa-trash-alt"></i></button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>5</td>
+                        <td><a href="school-detail.html">Hoàng Diệu</a></td>
+                        <td>Công lập</td>
+                        <td>10</td>
+                        <td></td>
+                        <td>038484288</td>
+                        <td><a href="principle-detail.html">Đặng Thái Dân</a></td>
+                        <td>New</td>
+                        <td>
+                          <a href="school-detail.html"
+                            ><button class="btn-success"><i class="fas fa-pen"></i></button
+                          ></a>
+                          <button class="btn-danger"><i class="fas fa-trash-alt"></i></button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>6</td>
+                        <td><a href="school-detail.html">Nguyễn Bá Ngọc</a></td>
+                        <td>Công lập</td>
+                        <td>11</td>
+                        <td>190/1 Xóm Đất, P.10</td>
+                        <td>038484288</td>
+                        <td><a href="principle-detail.html">Phạm Ngọc Hiền</a></td>
+                        <td>Old</td>
+                        <td>
+                          <a href="school-detail.html"
+                            ><button class="btn-success"><i class="fas fa-pen"></i></button
+                          ></a>
+                          <button class="btn-danger"><i class="fas fa-trash-alt"></i></button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>7</td>
+                        <td><a href="school-detail.html">Bình Trị 1</a></td>
+                        <td>Công lập</td>
+                        <td>Bình Tân</td>
+                        <td>620 Hương Lộ 2, KP.6, P.Bình Trị Đông</td>
+                        <td>038484288</td>
+                        <td><a href="principle-detail.html">Huỳnh Công Đức</a></td>
+                        <td>New</td>
+                        <td>
+                          <a href="school-detail.html"
+                            ><button class="btn-success"><i class="fas fa-pen"></i></button
+                          ></a>
+                          <button class="btn-danger"><i class="fas fa-trash-alt"></i></button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>8</td>
+                        <td><a href="school-detail.html">Nguyễn Tri Phương</a></td>
+                        <td>Ngoài công lập</td>
+                        <td>Gò Vấp</td>
+                        <td>61 Bùi Quang Là, P.12</td>
+                        <td>038484288</td>
+                        <td><a href="principle-detail.html">Huỳnh Bảo Quốc</a></td>
+                        <td>New</td>
+                        <td>
+                          <a href="school-detail.html"
+                            ><button class="btn-success"><i class="fas fa-pen"></i></button
+                          ></a>
+                          <button class="btn-danger"><i class="fas fa-trash-alt"></i></button>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- /.container-fluid -->
+        </div>
+        <!-- End of Main Content -->
+
+        <!-- Footer -->
+        <footer class="sticky-footer bg-white">
+          <div class="container my-auto">
+            <div class="copyright text-center my-auto">
+              <span>Copyright &copy; Major Education 2020</span>
+            </div>
+          </div>
+        </footer>
+        <!-- End of Footer -->
+      </div>
+      <!-- End of Content Wrapper -->
+    </div>
+    <!-- End of Page Wrapper -->
+
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+      <i class="fas fa-angle-up"></i>
+    </a>
+
+    <!-- Add New School Modal-->
+    <div class="modal fade bd-example-modal-lg" id="addModal" tabindex="-1" role="dialog" aria-labelledby="addModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="addModalLabel" style="font-weight: bold">Add new School</h5>
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <div class="modal-body" style="padding: 20px 30px 0 30px">
+            <h6 style="font-weight: bold; display: inline-block; margin-right: 490px">General Information</h6>
+            <button class="btn btn-primary" style="margin-bottom: 10px"><i class="fas fa-file-import"></i>&nbsp;Import</button>
+
+            <div class="form-group" style="width: 14%; display: inline-block; margin-right: 40px">
+              <label class="form-label">ID</label>
+              <input type="text" class="form-control mb-1" value="SC1501" readonly />
+            </div>
+            <div class="form-group" style="width: 80%; display: inline-block">
+              <label class="form-label">School name <span style="color: red">*</span></label>
+              <input type="text" class="form-control mb-1" />
+            </div>
+            <div class="form-group" style="width: 40%; display: inline-block; text-align: left">
+              <label class="form-label">School type</label>
+              <select class="custom-select">
+                <option selected>Công lập</option>
+                <option>Ngoài công lập</option>
+              </select>
+            </div>
+            <div class="form-group" style="width: 40%; display: inline-block; margin-left: 120px">
+              <label class="form-label">Educational stage</label>
+              <select class="custom-select">
+                <option selected>Tiểu học</option>
+                <option>Trung học cơ sở</option>
+                <option>Trung học phổ thông</option>
+                <option>Trường liên cấp</option>
+              </select>
+            </div>
+            <div class="form-group" style="width: 25%; display: inline-block; margin-right: 14px">
+              <label class="form-label">Phone number</label>
+              <input type="text" class="form-control mb-1" />
+            </div>
+            <div class="form-group" style="width: 45%; display: inline-block; margin-right: 14px">
+              <label class="form-label">Address</label>
+              <input type="text" class="form-control" />
+            </div>
+            <div class="form-group" style="width: 25%; display: inline-block">
+              <label class="form-label">Area</label>
+              <select class="custom-select">
+                <option selected>Quận 1</option>
+                <option>Quận 2</option>
+                <option>Quận 3</option>
+                <option>Quận 4</option>
+                <option>Quận 5</option>
+                <option>Quận 6</option>
+                <option>Quận 7</option>
+                <option>Quận 8</option>
+                <option>Quận 9</option>
+                <option>Quận 10</option>
+                <option>Quận 11</option>
+                <option>Quận 12</option>
+                <option>Quận Bình Tân</option>
+                <option>Quận Bình Thạnh</option>
+                <option>Quận Gò Vấp</option>
+                <option>Quận Phú Nhuận</option>
+                <option>Quận Tân Bình</option>
+                <option>Quận Tân Phú</option>
+                <option>Quận Thủ Đức</option>
+                <option>Huyện Bình Chánh</option>
+                <option>Huyện Cần Giờ</option>
+                <option>Huyện Củ Chi</option>
+                <option>Huyện Hóc Môn</option>
+                <option>Huyện Nhà Bè</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Description</label>
+              <textarea class="form-control" rows="4"> </textarea>
+            </div>
+            <div class="form-group">
+              <div style="width: 30%; display: inline-block; margin-right: 20px">
+                <label class="form-label">Status <span style="color: red">*</span></label>
+                <select class="custom-select">
+                  <option selected>Mới</option>
+                  <option>Tiềm năng</option>
+                  <option>Đang hợp tác</option>
+                  <option>Đã ngưng hợp tác</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Note</label>
+              <textarea class="form-control" rows="3"></textarea>
+            </div>
+            <hr />
+
+            <h6 style="font-weight: bold">Representor Contacts</h6>
+            <div class="form-group">
+              <label class="form-label">Fullname</label>
+              <input type="text" class="form-control mb-1" />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Role</label>
+              <input type="text" class="form-control" />
+            </div>
+            <div class="form-group" style="width: 40%; display: inline-block; margin-right: 82px">
+              <label class="form-label">Phone number</label>
+              <input type="text" class="form-control" />
+            </div>
+            <div class="form-group" style="width: 48%; display: inline-block">
+              <label class="form-label">Email</label>
+              <input type="text" class="form-control mb-1" />
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+            <button class="btn btn-primary" type="button" data-dismiss="modal">Add</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin-2.min.js"></script>
+
+    <!-- Page level plugins -->
+    <script src="vendor/datatables/jquery.dataTables.min.js"></script>
+    <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="js/demo/datatables-demo.js"></script>
+  </body>
+</html>

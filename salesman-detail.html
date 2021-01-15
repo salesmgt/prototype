@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <!--  This file has been downloaded from bootdey.com    @bootdey on twitter -->
+    <!--  All snippets are MIT license http://bootdey.com/license -->
+    <title>Salesman Detail</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
+
+    <link href="css/detail-pages.css" rel="stylesheet" />
+    <link href="css/sb-admin-2.css" rel="stylesheet" />
+
+    <style type="text/css">
+      .ui-w-80 {
+        width: 80px !important;
+        height: auto;
+      }
+
+      .btn-default {
+        border-color: rgba(24, 28, 33, 0.1);
+        background: rgba(0, 0, 0, 0);
+        color: #4e5155;
+      }
+
+      label.btn {
+        margin-bottom: 0;
+      }
+
+      .btn-outline-primary {
+        border-color: #26b4ff;
+        background: transparent;
+        color: #26b4ff;
+      }
+
+      .btn {
+        cursor: pointer;
+      }
+
+      .text-light {
+        color: #babbbc !important;
+      }
+
+      .btn-facebook {
+        border-color: rgba(0, 0, 0, 0);
+        background: #3b5998;
+        color: #fff;
+      }
+
+      .btn-instagram {
+        border-color: rgba(0, 0, 0, 0);
+        background: #000;
+        color: #fff;
+      }
+
+      .card {
+        background-clip: padding-box;
+        box-shadow: 0 1px 4px rgba(24, 28, 33, 0.012);
+      }
+
+      .row-bordered {
+        overflow: hidden;
+      }
+
+      .account-settings-fileinput {
+        position: absolute;
+        visibility: hidden;
+        width: 1px;
+        height: 1px;
+        opacity: 0;
+      }
+      .account-settings-links .list-group-item.active {
+        font-weight: bold !important;
+      }
+      html:not(.dark-style) .account-settings-links .list-group-item.active {
+        background: transparent !important;
+      }
+      .account-settings-multiselect ~ .select2-container {
+        width: 100% !important;
+      }
+      .light-style .account-settings-links .list-group-item {
+        padding: 0.85rem 1.5rem;
+        border-color: rgba(24, 28, 33, 0.03) !important;
+      }
+      .light-style .account-settings-links .list-group-item.active {
+        color: #4e5155 !important;
+      }
+      .material-style .account-settings-links .list-group-item {
+        padding: 0.85rem 1.5rem;
+        border-color: rgba(24, 28, 33, 0.03) !important;
+      }
+      .material-style .account-settings-links .list-group-item.active {
+        color: #4e5155 !important;
+      }
+      .dark-style .account-settings-links .list-group-item {
+        padding: 0.85rem 1.5rem;
+        border-color: rgba(255, 255, 255, 0.03) !important;
+      }
+      .dark-style .account-settings-links .list-group-item.active {
+        color: #fff !important;
+      }
+      .light-style .account-settings-links .list-group-item.active {
+        color: #4e5155 !important;
+      }
+      .light-style .account-settings-links .list-group-item {
+        padding: 0.85rem 1.5rem;
+        border-color: rgba(24, 28, 33, 0.03) !important;
+      }
+
+      /*=======================View history by year=======================*/
+      .year-accordion {
+        background-color: #eee;
+        color: #444;
+        cursor: pointer;
+        padding: 10px;
+        margin-bottom: 5px;
+        width: 100%;
+        border: none;
+        border-bottom: 0.5px darkblue dashed;
+        text-align: left;
+        transition: 0.4s;
+      }
+
+      .btn-active,
+      .year-accordion:hover {
+        background-color: #ccc;
+      }
+
+      .year-accordion:after {
+        content: '\002B';
+        color: darkblue;
+        font-weight: bold;
+        float: right;
+        margin-left: 5px;
+      }
+
+      .btn-active:after {
+        content: '\2212';
+      }
+
+      .panel {
+        padding: 0 18px;
+        background-color: white;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.2s ease-out;
+      }
+    </style>
+  </head>
+  <body id="page-top">
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+      <!-- Sidebar -->
+      <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+        <!-- Sidebar - Brand -->
+        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+          <img src="img/banner-major-edu.png" style="width: 99%" />
+        </a>
+
+        <!-- Divider -->
+        <hr class="sidebar-divider my-0" />
+
+        <!-- Nav Item - Dashboard -->
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">
+            <i class="fas fa-fw fa-tachometer-alt"></i>
+            <span>Dashboard</span>
+          </a>
+        </li>
+
+        <!-- Divider -->
+        <hr class="sidebar-divider" />
+
+        <!-- Heading -->
+        <div class="sidebar-heading">My Work</div>
+
+        <!-- Nav Item - Pages Collapse Menu -->
+        <li class="nav-item">
+          <a class="nav-link collapsed" href="https://www.figma.com/proto/flTpULC7t7Vb6S0YGsJbfA/Major?node-id=142%3A2&scaling=min-zoom">
+            <i class="fas fa-calendar-alt"></i>
+            <span>Workplan</span>
+          </a>
+        </li>
+
+        <!-- Divider -->
+        <hr class="sidebar-divider" />
+
+        <!-- Heading -->
+        <div class="sidebar-heading">Management</div>
+
+        <!-- Nav Item - Pages Collapse Menu -->
+        <li class="nav-item">
+          <a class="nav-link collapsed" href="school-mgt-1.html">
+            <i class="fas fa-school"></i>
+            <span>Schools</span>
+          </a>
+        </li>
+
+        <!-- Nav Item - Charts -->
+        <li class="nav-item">
+          <a class="nav-link" href="task-mgt-my.html">
+            <i class="fas fa-tasks"></i>
+            <span>Tasks</span></a
+          >
+        </li>
+
+        <!-- Nav Item - Tables -->
+        <li class="nav-item active">
+          <a class="nav-link" href="salesman-mgt.html">
+            <i class="fas fa-user-alt"></i>
+            <span>Salesmen</span></a
+          >
+        </li>
+
+        <!-- Divider -->
+        <hr class="sidebar-divider d-none d-md-block" />
+
+        <!-- Sidebar Toggler (Sidebar) -->
+        <div class="text-center d-none d-md-inline">
+          <button class="rounded-circle border-0" id="sidebarToggle"></button>
+        </div>
+      </ul>
+      <!-- End of Sidebar -->
+
+      <!-- Content Wrapper -->
+      <div id="content-wrapper" class="d-flex flex-column">
+        <!-- Main Content -->
+        <div id="content">
+          <!-- Topbar -->
+          <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+            <!-- Topbar Navbar -->
+            <ul class="navbar-nav ml-auto">
+              <!-- Nav Item - Alerts -->
+              <li class="nav-item dropdown no-arrow mx-1">
+                <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <i class="fas fa-bell fa-fw"></i>
+                  <!-- Counter - Alerts -->
+                  <span class="badge badge-danger badge-counter">3+</span>
+                </a>
+                <!-- Dropdown - Alerts -->
+                <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="alertsDropdown">
+                  <h6 class="dropdown-header">Alerts Center</h6>
+                  <a class="dropdown-item d-flex align-items-center" href="#">
+                    <div class="mr-3">
+                      <div class="icon-circle bg-primary">
+                        <i class="fas fa-file-alt text-white"></i>
+                      </div>
+                    </div>
+                    <div>
+                      <div class="small text-gray-500">December 12, 2019</div>
+                      <span class="font-weight-bold">A new monthly report is ready to download!</span>
+                    </div>
+                  </a>
+                  <a class="dropdown-item d-flex align-items-center" href="#">
+                    <div class="mr-3">
+                      <div class="icon-circle bg-success">
+                        <i class="fas fa-donate text-white"></i>
+                      </div>
+                    </div>
+                    <div>
+                      <div class="small text-gray-500">December 7, 2019</div>
+                      $290.29 has been deposited into your account!
+                    </div>
+                  </a>
+                  <a class="dropdown-item d-flex align-items-center" href="#">
+                    <div class="mr-3">
+                      <div class="icon-circle bg-warning">
+                        <i class="fas fa-exclamation-triangle text-white"></i>
+                      </div>
+                    </div>
+                    <div>
+                      <div class="small text-gray-500">December 2, 2019</div>
+                      Spending Alert: We've noticed unusually high spending for your account.
+                    </div>
+                  </a>
+                  <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
+                </div>
+              </li>
+
+              <div class="topbar-divider d-none d-sm-block"></div>
+
+              <!-- Nav Item - User Information -->
+              <li class="nav-item dropdown no-arrow">
+                <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <span class="mr-2 d-none d-lg-inline text-gray-600 small">Phạm Duy Tiến</span> &nbsp;
+                  <img class="img-profile rounded-circle" src="img/undraw_profile.svg" />
+                </a>
+                <!-- Dropdown - User Information -->
+                <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+                  <a class="dropdown-item" href="#">
+                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                    Profile
+                  </a>
+                  <a class="dropdown-item" href="#">
+                    <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
+                    Settings
+                  </a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                    Logout
+                  </a>
+                </div>
+              </li>
+            </ul>
+          </nav>
+          <!-- End of Topbar -->
+
+          <!-- Begin Page Content -->
+          <div class="container light-style flex-grow-1 container-p-y">
+            <!-- Page Heading -->
+            <div class="d-sm-flex align-items-center justify-content-between mb-4">
+              <h1 class="h3 mb-0 text-gray-800">Salesman detail</h1>
+            </div>
+
+            <div class="card overflow-hidden">
+              <div class="row no-gutters row-bordered row-border-light">
+                <div class="col-md-3 pt-0">
+                  <div class="list-group list-group-flush account-settings-links">
+                    <a class="list-group-item list-group-item-action active" data-toggle="list" href="#salesman-info">General</a>
+                    <a class="list-group-item list-group-item-action" data-toggle="list" href="#salesman-assinged-school">Assigned schools</a>
+                    <a class="list-group-item list-group-item-action" data-toggle="list" href="#salesman-reports">Reports</a>
+                  </div>
+                </div>
+                <div class="col-md-9">
+                  <div class="tab-content">
+                    <div class="tab-pane fade active show" id="salesman-info">
+                      <div class="card-body">
+                        <h4>General information</h4>
+                      </div>
+                      <div class="card-body media align-items-center">
+                        <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="avatar" class="d-block ui-w-80" style="border-radius: 50%" />
+                        <div class="media-body ml-4">
+                          <label class="btn btn-outline-primary">
+                            Upload new photo
+                            <input type="file" class="account-settings-fileinput" />
+                          </label>
+                          <div class="text-light small mt-1">Allowed JPG, GIF or PNG. Max size of 800K</div>
+                        </div>
+                      </div>
+                      <hr class="border-light m-0" />
+
+                      <div class="card-body">
+                        <div class="form-group">
+                          <label class="form-label">Full name</label>
+                          <input type="text" class="form-control mb-1" value="Phạm Duy Tiến" />
+                        </div>
+                        <div class="form-group">
+                          <label class="form-label">Phone number</label>
+                          <input type="text" class="form-control" value="0963 281 235" />
+                        </div>
+                        <div class="form-group">
+                          <label class="form-label">Email</label>
+                          <input type="text" class="form-control mb-1" value="duytien@truongvietanh.com" />
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="tab-pane fade" id="salesman-assinged-school">
+                      <div class="card-body pb-2">
+                        <h4>Assigned schools</h4>
+                        <br />
+                        <!--Dùng Accordion-->
+                        <button class="year-accordion">2016</button>
+                        <div class="panel">
+                          <ul>
+                            <li style="color: #1cc88a">TH Phú Định</li>
+                            <li style="color: #1cc88a">TH Lam Sơn</li>
+                            <li style="color: #1cc88a">THCS Long Trường</li>
+                            <li style="color: #cc554a">THPT Nguyễn Văn Tăng</li>
+                            <li style="color: #cc554a">THPT Long Trường</li>
+                            <li style="color: #1cc88a">THPT Phước Long</li>
+                            <li style="color: #cc554a">THPT Nguyễn Du</li>
+                          </ul>
+                        </div>
+
+                        <button class="year-accordion">2017</button>
+                        <div class="panel">
+                          <ul>
+                            <li style="color: #cc554a">TH Vĩnh Xuyên</li>
+                            <li style="color: #1cc88a">TH Nguyễn Thiện Thuật</li>
+                            <li style="color: #1cc88a">THCS Hoàng Quốc Việt</li>
+                            <li style="color: #cc554a">THCS Phạm Hữu Lầu</li>
+                            <li style="color: #1cc88a">THPT Nguyễn An Ninh</li>
+                            <li style="color: #1cc88a">THPT Sương Nguyệt Anh</li>
+                            <li style="color: #1cc88a">THPT Nguyễn Trung Trực</li>
+                          </ul>
+                        </div>
+
+                        <button class="year-accordion">2018</button>
+                        <div class="panel">
+                          <ul>
+                            <li style="color: #1cc88a">TH Nhật Tảo</li>
+                            <li style="color: #1cc88a">TH Hùng Vương</li>
+                            <li style="color: #1cc88a">TH Phù Đổng</li>
+                            <li style="color: #1cc88a">THCS Tăng Nhơn Phú B</li>
+                            <li style="color: #1cc88a">THCS Trường Thạnh</li>
+                            <li style="color: #1cc88a">Trường THPT Hàn Thuyên</li>
+                            <li style="color: #1cc88a">TH, THCS và THPT Vạn Hạnh</li>
+                          </ul>
+                        </div>
+
+                        <button class="year-accordion">2019</button>
+                        <div class="panel">
+                          <ul>
+                            <li style="color: #1cc88a">TH Đặng Nguyên Cẩn</li>
+                            <li style="color: #1cc88a">TH Phạm Văn Chí</li>
+                            <li style="color: #1cc88a">THCS Long Trường</li>
+                            <li style="color: #1cc88a">THCS Hoàng Quốc Việt</li>
+                            <li style="color: #cc554a">THCS Huỳnh Tấn Phát</li>
+                            <li style="color: #1cc88a">THPT Trường Chinh</li>
+                            <li style="color: #cc554a">THPT Thạnh Lộc</li>
+                          </ul>
+                        </div>
+
+                        <button class="year-accordion">2020</button>
+                        <div class="panel">
+                          <ul>
+                            <li style="color: #1cc88a">TH Him Lam</li>
+                            <li style="color: #1cc88a">TH Mỹ Thủy</li>
+                            <li style="color: #cc554a">TH Tân Quy</li>
+                            <li style="color: #1cc88a">THCS Nguyễn Hữu Thọ</li>
+                            <li style="color: #1cc88a">THCS Trần Quốc Tuấn</li>
+                            <li style="color: #858796">THPT Lữ Gia</li>
+                            <li style="color: #858796">TH, THCS và THPT Trương Vĩnh Ký</li>
+                          </ul>
+                        </div>
+
+                        <script>
+                          var acc = document.getElementsByClassName('year-accordion')
+                          var i
+
+                          for (i = 0; i < acc.length; i++) {
+                            acc[i].addEventListener('click', function () {
+                              this.classList.toggle('btn-active')
+                              var panel = this.nextElementSibling
+                              if (panel.style.maxHeight) {
+                                panel.style.maxHeight = null
+                              } else {
+                                panel.style.maxHeight = panel.scrollHeight + 'px'
+                              }
+                            })
+                          }
+                        </script>
+                      </div>
+                    </div>
+
+                    <div class="tab-pane fade" id="salesman-reports">
+                      <div class="card-body pb-2">
+                        <h4>School Reports</h4>
+                        <br />
+                        <table class="table table-hover table-bordered table-striped">
+                          <thead class="thead-dark">
+                            <tr>
+                              <th>#</th>
+                              <th>Date</th>
+                              <th>School</th>
+                              <th>District</th>
+                              <th>Purpose</th>
+                              <th>Result</th>
+                              <th>Description</th>
+                            </tr>
+                          </thead>
+                          <tbody id="items">
+                            <tr>
+                              <td>1</td>
+                              <td>01/11/2019</td>
+                              <td>TH Hùng Vương</td>
+                              <td>5</td>
+                              <td>Sales mới</td>
+                              <td>Đã gặp HT</td>
+                              <td>Thầy rất thiện chí muốn hợp tác</td>
+                            </tr>
+                            <tr>
+                              <td>2</td>
+                              <td>09/11/2019</td>
+                              <td>THCS Đống Đa</td>
+                              <td>Gò Vấp</td>
+                              <td>Sales mới</td>
+                              <td>Chưa gặp được HT</td>
+                              <td>Thầy đi công tác đột xuất</td>
+                            </tr>
+                            <tr>
+                              <td>3</td>
+                              <td>15/11/2019</td>
+                              <td>THPT Ngô Quyền</td>
+                              <td>Bình Tân</td>
+                              <td>Sales mới</td>
+                              <td>Đã gặp HT</td>
+                              <td>Gặp ngắn do thầy bận họp</td>
+                            </tr>
+                            <tr>
+                              <td>4</td>
+                              <td>30/12/2019</td>
+                              <td>TH Duy Tân</td>
+                              <td>Tân Phú</td>
+                              <td>Sales mới</td>
+                              <td>Chưa gặp được HT</td>
+                              <td>Địa chỉ Google sai</td>
+                            </tr>
+                            <tr>
+                              <td>5</td>
+                              <td>19/05/2020</td>
+                              <td>TH Quang Trung</td>
+                              <td>12</td>
+                              <td>Tái ký</td>
+                              <td>Đã gặp HT</td>
+                              <td>Tái ký thành công khóa tiếng Anh 1 năm</td>
+                            </tr>
+                            <tr>
+                              <td>6</td>
+                              <td>27/08/2020</td>
+                              <td>THPT Nguyễn Thượng Hiền</td>
+                              <td>10</td>
+                              <td>Chăm sóc</td>
+                              <td>Đã gặp HT</td>
+                              <td>Tặng quà mừng thành lập trường</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="text-right mt-3">
+              <a href="salesman-mgt.html">
+                <button type="button" class="btn btn-primary">Save changes</button>
+              </a>
+              &nbsp;
+              <a href="salesman-mgt.html">
+                <button type="button" class="btn btn-default">Cancel</button>
+              </a>
+            </div>
+          </div>
+          <br />
+        </div>
+        <!-- End of Main Content -->
+
+        <!-- Footer -->
+        <footer class="sticky-footer bg-white">
+          <div class="container my-auto">
+            <div class="copyright text-center my-auto">
+              <span>Copyright &copy; Major Education 2021</span>
+            </div>
+          </div>
+        </footer>
+        <!-- End of Footer -->
+      </div>
+      <!-- End of Content Wrapper -->
+    </div>
+    <!-- End of Page Wrapper -->
+
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+      <i class="fas fa-angle-up"></i>
+    </a>
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin-2.min.js"></script>
+
+    <!-- Page level plugins -->
+    <script src="vendor/datatables/jquery.dataTables.min.js"></script>
+    <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="js/demo/datatables-demo.js"></script>
+
+    <!-- JS của cái ruột-->
+    <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript"></script>
+  </body>
+</html>
