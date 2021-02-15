@@ -7,14 +7,15 @@
     <meta name="description" content="" />
     <meta name="author" content="" />
 
-    <title>School Management - Secondary school</title>
+    <title>My Task Management</title>
 
     <!-- Custom fonts for this template -->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
 
     <!-- Custom styles for this template -->
-    <link href="css/sb-admin-2.min.css" rel="stylesheet" />
+    <link href="css/sb-admin-2.css" rel="stylesheet" />
+    <!--.min-->
 
     <!-- Custom styles for this page -->
     <link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet" />
@@ -62,7 +63,7 @@
         <div class="sidebar-heading">Management</div>
 
         <!-- Nav Item - Pages Collapse Menu -->
-        <li class="nav-item active">
+        <li class="nav-item">
           <a class="nav-link collapsed" href="school-mgt-1.html">
             <i class="fas fa-school"></i>
             <span>Schools</span>
@@ -70,7 +71,7 @@
         </li>
 
         <!-- Nav Item - Charts -->
-        <li class="nav-item">
+        <li class="nav-item active">
           <a class="nav-link" href="task-mgt-my.html">
             <i class="fas fa-tasks"></i>
             <span>Tasks</span></a
@@ -182,40 +183,36 @@
           <!-- Begin Page Content -->
           <div class="container-fluid">
             <!-- Page Heading -->
-            <h1 class="h3 mb-2 text-gray-800">School Management</h1>
+            <h1 class="h3 mb-2 text-gray-800">Task Management</h1>
 
-            <!-- Quick Filter School level -->
+            <!-- Quick Filter Task -->
             <div style="width: 130px; margin-right: 7px; display: inline-block">
-              <a href="school-mgt-1.html">
-                <button style="width: 100%">Tiểu học</button>
+              <a href="task-mgt-my.html">
+                <button style="width: 100%; background-color: rgb(111, 145, 255); color: whitesmoke">My Tasks</button>
               </a>
             </div>
             <div style="width: 130px; margin-right: 7px; display: inline-block">
-              <a href="school-mgt-2.html">
-                <button style="width: 100%; background-color: rgb(111, 145, 255); color: whitesmoke">THCS</button>
+              <a href="task-mgt-all.html">
+                <button style="width: 100%">All Tasks</button>
               </a>
             </div>
-            <div style="width: 130px; display: inline-block">
-              <a href="school-mgt-3.html">
-                <button style="width: 100%">THPT</button>
+            <!-- <div style="width: 150px; margin-left: 640px; display: inline-block">
+              <a href="task-mgt-report.html">
+                <button type="button" class="btn btn-primary" style="width: 100%">View daily report</button>
               </a>
-            </div>
+            </div> -->
             <br />
+
             <!-- DataTales Example -->
             <div class="card shadow mb-4" style="width: 100%; margin-top: 22px; display: block; float: none">
-              <div class="card-header py-3">
-                <h6 class="m-0 font-weight-bold text-primary">Trung học cơ sở</h6>
+              <div class="card-header py-3" style="height: 55px">
+                <h5 class="m-0 font-weight-bold text-primary" style="display: block; float: left">My Tasks</h5>
+                <h6 class="m-0 font-weight-bold text-primary" style="display: block; float: right">
+                  <i>Phase 1: School year 2020-2021</i>
+                </h6>
               </div>
               <div class="card-body">
                 <div class="filters">
-                  <div class="form-group" style="width: 17%; display: inline-block; margin-right: 10px">
-                    <label class="form-label">School type</label>
-                    <select class="custom-select">
-                      <option selected>Tất cả</option>
-                      <option>Công lập</option>
-                      <option>Ngoài công lập</option>
-                    </select>
-                  </div>
                   <div class="form-group" style="width: 17%; display: inline-block; margin-right: 10px">
                     <label class="form-label">District</label>
                     <select class="custom-select">
@@ -246,16 +243,16 @@
                       <option>Huyện Nhà Bè</option>
                     </select>
                   </div>
-                  <div style="width: 17%; display: inline-block">
-                    <label class="form-label">Status</label>
+                  <div style="width: 17%; display: inline-block; margin-right: 20px">
+                    <label class="form-label">Purpose</label>
                     <select class="custom-select">
                       <option selected>Tất cả</option>
-                      <option>Old</option>
-                      <option>New</option>
+                      <option>Sales mới</option>
+                      <option>Chăm sóc</option>
                     </select>
                   </div>
 
-                  <div class="action-buttons" style="display: inline-block; margin-left: 292px">
+                  <div class="action-buttons" style="display: inline-block; margin-left: 461px">
                     <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#addModal"><i class="fas fa-plus"></i> &nbsp;Add</button>&nbsp;
                     <button class="btn btn-outline-primary"><i class="fas fa-file-export"></i>&nbsp;Export</button>
                   </div>
@@ -265,144 +262,183 @@
                   <table class="table table-striped table-bordered dt-responsive" id="dataTable" width="100%" cellspacing="0">
                     <thead class="thead-dark">
                       <tr>
-                        <th>No.</th>
-                        <th>School name</th>
-                        <th>Type</th>
+                        <th></th>
+                        <th>School Name</th>
                         <th>District</th>
-                        <th>Address</th>
-                        <th>Contact</th>
                         <th>Representor</th>
-                        <th>Status</th>
+                        <th>Phone</th>
+                        <th>PIC</th>
+                        <th>Purpose</th>
+                        <th>Note</th>
                         <th>Actions</th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr>
-                        <td>1</td>
-                        <td><a href="school-detail.html">Trần Quang Khải</a></td>
-                        <td>Công lập</td>
-                        <td>1</td>
-                        <td>68/29B Trần Quang Khải, P.Tân Định</td>
-                        <td>038484288</td>
-                        <td><a href="principle-detail.html">Hồ Quang Tuấn</a></td>
-                        <td>New</td>
-                        <td>
-                          <a href="school-detail.html"
-                            ><button class="btn-success"><i class="fas fa-pen"></i></button
-                          ></a>
-                          <button class="btn-danger"><i class="fas fa-trash-alt"></i></button>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>2</td>
-                        <td><a href="school-detail.html">Hàm Tử</a></td>
-                        <td>Công lập</td>
+                        <td><input type="checkbox" /></td>
+                        <td><a href="task-detail.html">TH Hùng Vương</a></td>
                         <td>5</td>
-                        <td>750-752 Võ Văn Kiệt, P.1h</td>
-                        <td>038484288</td>
-                        <td><a href="principle-detail.html">Lưu Nguyễn Thanh Phong</a></td>
-                        <td>New</td>
+                        <td>Cô Yên</td>
+                        <td>028 3894 7992</td>
+                        <td>Duy Tiến</td>
+                        <td>Sales mới</td>
+                        <td>Giới thiệu khóa học Toán Khoa</td>
                         <td>
-                          <a href="school-detail.html"
-                            ><button class="btn-success"><i class="fas fa-pen"></i></button
-                          ></a>
+                          <a href="task-detail.html">
+                            <button class="btn-success"><i class="fas fa-pen"></i></button>
+                          </a>
                           <button class="btn-danger"><i class="fas fa-trash-alt"></i></button>
                         </td>
                       </tr>
                       <tr>
-                        <td>3</td>
-                        <td><a href="school-detail.html">Trần Bình Trọng</a></td>
-                        <td>Công lập</td>
-                        <td>5</td>
-                        <td>120 Trần Bình Trọng, P.2</td>
-                        <td>038484288</td>
-                        <td><a href="principle-detail.html">Phạm Thị Kim Loan</a></td>
-                        <td>New</td>
-                        <td>
-                          <a href="school-detail.html"
-                            ><button class="btn-success"><i class="fas fa-pen"></i></button
-                          ></a>
-                          <button class="btn-danger"><i class="fas fa-trash-alt"></i></button>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>4</td>
-                        <td><a href="school-detail.html">Văn Lang</a></td>
-                        <td>Ngoài công lập</td>
-                        <td>1</td>
-                        <td>84 Tân Hưng, P.12</td>
-                        <td>038484288</td>
-                        <td><a href="principle-detail.html">Nguyễn Nguyệt Lạng</a></td>
-                        <td>New</td>
-                        <td>
-                          <a href="school-detail.html"
-                            ><button class="btn-success"><i class="fas fa-pen"></i></button
-                          ></a>
-                          <button class="btn-danger"><i class="fas fa-trash-alt"></i></button>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>5</td>
-                        <td><a href="school-detail.html">Hoàng Diệu</a></td>
-                        <td>Công lập</td>
-                        <td>10</td>
-                        <td></td>
-                        <td>038484288</td>
-                        <td><a href="principle-detail.html">Đặng Thái Dân</a></td>
-                        <td>New</td>
-                        <td>
-                          <a href="school-detail.html"
-                            ><button class="btn-success"><i class="fas fa-pen"></i></button
-                          ></a>
-                          <button class="btn-danger"><i class="fas fa-trash-alt"></i></button>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>6</td>
-                        <td><a href="school-detail.html">Nguyễn Bá Ngọc</a></td>
-                        <td>Công lập</td>
-                        <td>11</td>
-                        <td>190/1 Xóm Đất, P.10</td>
-                        <td>038484288</td>
-                        <td><a href="principle-detail.html">Phạm Ngọc Hiền</a></td>
-                        <td>Old</td>
-                        <td>
-                          <a href="school-detail.html"
-                            ><button class="btn-success"><i class="fas fa-pen"></i></button
-                          ></a>
-                          <button class="btn-danger"><i class="fas fa-trash-alt"></i></button>
-                        </td>
-                      </tr>
-                      <tr>
+                        <td><input type="checkbox" /></td>
+                        <td><a href="task-detail.html">THPT Trần Văn Quang</a></td>
                         <td>7</td>
-                        <td><a href="school-detail.html">Bình Trị 1</a></td>
-                        <td>Công lập</td>
-                        <td>Bình Tân</td>
-                        <td>620 Hương Lộ 2, KP.6, P.Bình Trị Đông</td>
-                        <td>038484288</td>
-                        <td><a href="principle-detail.html">Huỳnh Công Đức</a></td>
-                        <td>New</td>
+                        <td>Thầy Thịnh</td>
+                        <td>028 3864 5699</td>
+                        <td>Duy Tiến</td>
+                        <td>Sales mới</td>
+                        <td></td>
                         <td>
-                          <a href="school-detail.html"
+                          <a href="task-detail.html"
                             ><button class="btn-success"><i class="fas fa-pen"></i></button
                           ></a>
                           <button class="btn-danger"><i class="fas fa-trash-alt"></i></button>
                         </td>
                       </tr>
                       <tr>
+                        <td><input type="checkbox" /></td>
+                        <td><a href="task-detail.html">THPT Phan Tây Hồ</a></td>
                         <td>8</td>
-                        <td><a href="school-detail.html">Nguyễn Tri Phương</a></td>
-                        <td>Ngoài công lập</td>
-                        <td>Gò Vấp</td>
-                        <td>61 Bùi Quang Là, P.12</td>
-                        <td>038484288</td>
-                        <td><a href="principle-detail.html">Huỳnh Bảo Quốc</a></td>
-                        <td>New</td>
+                        <td>Thầy Huy</td>
+                        <td>028 3975 5766</td>
+                        <td>Duy Tiến</td>
+                        <td>Sales mới</td>
+                        <td></td>
                         <td>
-                          <a href="school-detail.html"
+                          <a href="task-detail.html"
                             ><button class="btn-success"><i class="fas fa-pen"></i></button
                           ></a>
                           <button class="btn-danger"><i class="fas fa-trash-alt"></i></button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><input type="checkbox" /></td>
+                        <td><a href="task-detail.html">TH Phan Chu Trinh</a></td>
+                        <td>5</td>
+                        <td>Cô Xuân</td>
+                        <td>028 3894 7992</td>
+                        <td>Duy Tiến</td>
+                        <td>Sales mới</td>
+                        <td>Giới thiệu khóa học Toán Khoa</td>
+                        <td>
+                          <a href="task-detail.html"
+                            ><button class="btn-success"><i class="fas fa-pen"></i></button
+                          ></a>
+                          <button class="btn-danger"><i class="fas fa-trash-alt"></i></button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><input type="checkbox" /></td>
+                        <td><a href="task-detail.html">TH Lê Đức Thọ</a></td>
+                        <td>5</td>
+                        <td>Thầy Bình</td>
+                        <td>028 5446 7355</td>
+                        <td>Duy Tiến</td>
+                        <td>Sales mới</td>
+                        <td></td>
+                        <td>
+                          <a href="task-detail.html"
+                            ><button class="btn-success"><i class="fas fa-pen"></i></button
+                          ></a>
+                          <button class="btn-danger"><i class="fas fa-trash-alt"></i></button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><input type="checkbox" /></td>
+                        <td><a href="task-detail.html">THPT Đuốc Sống</a></td>
+                        <td>5</td>
+                        <td>Cô Huyền</td>
+                        <td>028 3894 2347</td>
+                        <td>Duy Tiến</td>
+                        <td>Chăm sóc</td>
+                        <td></td>
+                        <td>
+                          <a href="task-detail.html"
+                            ><button class="btn-success"><i class="fas fa-pen"></i></button
+                          ></a>
+                          <button class="btn-danger"><i class="fas fa-trash-alt"></i></button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><input type="checkbox" /></td>
+                        <td><a href="task-detail.html">THCS Đinh Tiên Hoàng</a></td>
+                        <td>5</td>
+                        <td>Cô Thư</td>
+                        <td>028 3894 0013</td>
+                        <td>Duy Tiến</td>
+                        <td>Sales mới</td>
+                        <td></td>
+                        <td>
+                          <a href="task-detail.html"
+                            ><button class="btn-success"><i class="fas fa-pen"></i></button
+                          ></a>
+                          <button class="btn-danger"><i class="fas fa-trash-alt"></i></button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><input type="checkbox" /></td>
+                        <td><a href="task-detail.html">THPT Trần Quang Khải</a></td>
+                        <td>5</td>
+                        <td>Thầy Thảo</td>
+                        <td>028 3894 7958</td>
+                        <td>Duy Tiến</td>
+                        <td>Sales mới</td>
+                        <td></td>
+                        <td>
+                          <a href="task-detail.html"
+                            ><button class="btn-success"><i class="fas fa-pen"></i></button
+                          ></a>
+                          <button class="btn-danger"><i class="fas fa-trash-alt"></i></button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><input type="checkbox" /></td>
+                        <td><a href="task-detail.html">TH Trần Khánh Dư</a></td>
+                        <td>5</td>
+                        <td>Cô Tâm</td>
+                        <td>028 3863 8276</td>
+                        <td>Duy Tiến</td>
+                        <td>Sales mới</td>
+                        <td></td>
+                        <td>
+                          <a href="task-detail.html"
+                            ><button class="btn-success"><i class="fas fa-pen"></i></button
+                          ></a>
+                          <button class="btn-danger"><i class="fas fa-trash-alt"></i></button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><input type="checkbox" /></td>
+                        <td><a href="task-detail.html">THCS Nguyễn Gia Thiều</a></td>
+                        <td>5</td>
+                        <td>Thầy Vượng</td>
+                        <td>028 3991 9950</td>
+                        <td>Duy Tiến</td>
+                        <td>Chăm sóc</td>
+                        <td></td>
+                        <td>
+                          <a href="task-detail.html"
+                            ><button class="btn-success"><i class="fas fa-pen"></i></button
+                          ></a>
+                          <button class="btn-danger">
+                            <i class="fas fa-trash-alt">
+                              <!-- <ul>
+                                <li>Update</li>
+                                <li>Remove</li>
+                              </ul> -->
+                            </i>
+                          </button>
                         </td>
                       </tr>
                     </tbody>
@@ -434,53 +470,30 @@
       <i class="fas fa-angle-up"></i>
     </a>
 
-    <!-- Add New School Modal-->
+    <!-- Add New Task Modal-->
     <div class="modal fade bd-example-modal-lg" id="addModal" tabindex="-1" role="dialog" aria-labelledby="addModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="addModalLabel" style="font-weight: bold">Add new School</h5>
+            <h5 class="modal-title" id="addModalLabel" style="font-weight: bold">Add new Task</h5>
             <button class="close" type="button" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">×</span>
             </button>
           </div>
           <div class="modal-body" style="padding: 20px 30px 0 30px">
-            <h6 style="font-weight: bold; display: inline-block; margin-right: 490px">General Information</h6>
-            <button class="btn btn-primary" style="margin-bottom: 10px"><i class="fas fa-file-import"></i>&nbsp;Import</button>
-
             <div class="form-group" style="width: 14%; display: inline-block; margin-right: 40px">
               <label class="form-label">ID</label>
-              <input type="text" class="form-control mb-1" value="SC1501" readonly />
+              <input type="text" class="form-control mb-1" value="TA01001" readonly />
             </div>
             <div class="form-group" style="width: 80%; display: inline-block">
+              <label class="form-label">Title <span style="color: red">*</span></label>
+              <input type="text" class="form-control mb-1" />
+            </div>
+            <div class="form-group">
               <label class="form-label">School name <span style="color: red">*</span></label>
               <input type="text" class="form-control mb-1" />
             </div>
-            <div class="form-group" style="width: 40%; display: inline-block; text-align: left">
-              <label class="form-label">School type</label>
-              <select class="custom-select">
-                <option selected>Công lập</option>
-                <option>Ngoài công lập</option>
-              </select>
-            </div>
-            <div class="form-group" style="width: 40%; display: inline-block; margin-left: 120px">
-              <label class="form-label">Educational stage</label>
-              <select class="custom-select">
-                <option selected>Tiểu học</option>
-                <option>Trung học cơ sở</option>
-                <option>Trung học phổ thông</option>
-                <option>Trường liên cấp</option>
-              </select>
-            </div>
             <div class="form-group" style="width: 25%; display: inline-block; margin-right: 14px">
-              <label class="form-label">Phone number</label>
-              <input type="text" class="form-control mb-1" />
-            </div>
-            <div class="form-group" style="width: 45%; display: inline-block; margin-right: 14px">
-              <label class="form-label">Address</label>
-              <input type="text" class="form-control" />
-            </div>
-            <div class="form-group" style="width: 25%; display: inline-block">
               <label class="form-label">Area</label>
               <select class="custom-select">
                 <option selected>Quận 1</option>
@@ -509,43 +522,43 @@
                 <option>Huyện Nhà Bè</option>
               </select>
             </div>
-            <div class="form-group">
-              <label class="form-label">Description</label>
-              <textarea class="form-control" rows="4"> </textarea>
+            <div class="form-group" style="width: 45%; display: inline-block; margin-right: 14px">
+              <label class="form-label">Representor</label>
+              <input type="text" class="form-control" />
             </div>
-            <div class="form-group">
-              <div style="width: 30%; display: inline-block; margin-right: 20px">
-                <label class="form-label">Status <span style="color: red">*</span></label>
-                <select class="custom-select">
-                  <option selected>Mới</option>
-                  <option>Tiềm năng</option>
-                  <option>Đang hợp tác</option>
-                  <option>Đã ngưng hợp tác</option>
-                </select>
-              </div>
+            <div class="form-group" style="width: 25%; display: inline-block">
+              <label class="form-label">Phone number</label>
+              <input type="text" class="form-control mb-1" />
+            </div>
+            <div class="form-group" style="width: 40%; display: inline-block">
+              <label class="form-label">Start date</label>
+              <input type="date" class="form-control" value="10/06/2021" data-provide="datepicker" />
+            </div>
+            <div class="form-group" style="width: 40%; display: inline-block; margin-left: 120px">
+              <label class="form-label">End date</label>
+              <input type="date" class="form-control" value="30/09/2021" data-provide="datepicker" />
+            </div>
+            <div class="form-group" style="width: 40%; display: inline-block">
+              <label class="form-label">PIC <span style="color: red">*</span></label>
+              <select class="custom-select">
+                <option selected>Duy Tiến</option>
+                <option>Huyên</option>
+                <option>Tuyền</option>
+                <option>Thái</option>
+                <option>Ngọc</option>
+              </select>
+            </div>
+            <div class="form-group" style="width: 40%; display: inline-block; margin-left: 120px">
+              <label class="form-label">Purpose <span style="color: red">*</span></label>
+              <select class="custom-select">
+                <option selected>Sales mới</option>
+                <option>Chăm sóc</option>
+                <option>Tái ký</option>
+              </select>
             </div>
             <div class="form-group">
               <label class="form-label">Note</label>
-              <textarea class="form-control" rows="3"></textarea>
-            </div>
-            <hr />
-
-            <h6 style="font-weight: bold">Representor Contacts</h6>
-            <div class="form-group">
-              <label class="form-label">Fullname</label>
-              <input type="text" class="form-control mb-1" />
-            </div>
-            <div class="form-group">
-              <label class="form-label">Role</label>
-              <input type="text" class="form-control" />
-            </div>
-            <div class="form-group" style="width: 40%; display: inline-block; margin-right: 82px">
-              <label class="form-label">Phone number</label>
-              <input type="text" class="form-control" />
-            </div>
-            <div class="form-group" style="width: 48%; display: inline-block">
-              <label class="form-label">Email</label>
-              <input type="text" class="form-control mb-1" />
+              <textarea class="form-control" rows="3"> </textarea>
             </div>
           </div>
           <div class="modal-footer">
