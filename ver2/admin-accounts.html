@@ -7,14 +7,14 @@
     <meta name="description" content="" />
     <meta name="author" content="" />
 
-    <title>SB Admin 2 - Tables</title>
+    <title>Salesman Management</title>
 
     <!-- Custom fonts for this template -->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
 
     <!-- Custom styles for this template -->
-    <link href="css/sb-admin-2.min.css" rel="stylesheet" />
+    <link href="css/sb-admin-2.css" rel="stylesheet" />
 
     <!-- Custom styles for this page -->
     <link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet" />
@@ -42,39 +42,47 @@
         </li>
 
         <!-- Divider -->
-        <!-- <hr class="sidebar-divider" /> -->
+        <hr class="sidebar-divider" />
 
         <!-- Heading -->
-        <!-- <div class="sidebar-heading">My Work</div> -->
-
-        <!-- Divider -->
-        <!-- <hr class="sidebar-divider" /> -->
-
-        <!-- Heading -->
-        <!-- <div class="sidebar-heading">Management</div> -->
+        <div class="sidebar-heading">My Work</div>
 
         <!-- Nav Item - Pages Collapse Menu -->
         <li class="nav-item">
-          <a class="nav-link collapsed" href="#">
-            <i class="fas fa-tasks"></i>
-            <span>Reports</span>
+          <a class="nav-link collapsed" href="https://www.figma.com/proto/flTpULC7t7Vb6S0YGsJbfA/Major?node-id=142%3A2&scaling=min-zoom">
+            <i class="fas fa-calendar-alt"></i>
+            <span>Workplan</span>
           </a>
         </li>
+
+        <!-- Divider -->
+        <hr class="sidebar-divider" />
+
+        <!-- Heading -->
+        <div class="sidebar-heading">Management</div>
 
         <!-- Nav Item - Pages Collapse Menu -->
         <li class="nav-item">
           <a class="nav-link collapsed" href="school-mgt-1.html">
             <i class="fas fa-school"></i>
-            <span>Target Schools</span>
+            <span>Schools</span>
           </a>
         </li>
 
-        <!-- Nav Item - Pages Collapse Menu -->
+        <!-- Nav Item - Charts -->
         <li class="nav-item">
-          <a class="nav-link collapsed" href="#">
-            <i class="fas fa-calendar-alt"></i>
-            <span>Workplan</span>
-          </a>
+          <a class="nav-link" href="task-mgt-my.html">
+            <i class="fas fa-tasks"></i>
+            <span>Tasks</span></a
+          >
+        </li>
+
+        <!-- Nav Item - Tables -->
+        <li class="nav-item active">
+          <a class="nav-link" href="salesman-mgt.html">
+            <i class="fas fa-user-alt"></i>
+            <span>Salesmen</span></a
+          >
         </li>
 
         <!-- Divider -->
@@ -97,15 +105,7 @@
             <ul class="navbar-nav ml-auto">
               <!-- Nav Item - Alerts -->
               <li class="nav-item dropdown no-arrow mx-1">
-                <a
-                  class="nav-link dropdown-toggle"
-                  href="#"
-                  id="alertsDropdown"
-                  role="button"
-                  data-toggle="dropdown"
-                  aria-haspopup="true"
-                  aria-expanded="false"
-                >
+                <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <i class="fas fa-bell fa-fw"></i>
                   <!-- Counter - Alerts -->
                   <span class="badge badge-danger badge-counter">3+</span>
@@ -169,7 +169,7 @@
                     Settings
                   </a>
                   <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                  <a class="dropdown-item" href="login.html">
                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                     Logout
                   </a>
@@ -180,8 +180,113 @@
           <!-- End of Topbar -->
 
           <!-- Begin Page Content -->
-          <div style="padding-left: 20px">
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addModal">Add</button>
+          <div class="container-fluid">
+            <!-- Page Heading -->
+            <h1 class="h3 mb-2 text-gray-800">Salesman Management</h1>
+
+            <!-- DataTales Example -->
+            <div class="card shadow mb-4">
+              <div class="card-body">
+                <div class="filters">
+                  <div class="action-buttons" style="display: inline-block; margin-left: 846px">
+                    <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#addModal"><i class="fas fa-user-plus"></i> &nbsp;Add</button>&nbsp;
+                    <button class="btn btn-outline-primary"><i class="fas fa-file-export"></i>&nbsp;Export</button>
+                  </div>
+                </div>
+                <br />
+                <div class="table-responsive">
+                  <table class="table table-striped table-bordered dt-responsive" id="dataTable" width="100%" cellspacing="0">
+                    <thead class="thead-dark">
+                      <tr>
+                        <th>No.</th>
+                        <th>Full name</th>
+                        <th>Phone</th>
+                        <th>Email</th>
+                        <th>Asigned schools</th>
+                        <th>Actions</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>SM01</td>
+                        <td>
+                          <a href="salesman-detail.html"> <img src="img/ava1.png" alt="Avatar" class="avatar" /> &nbsp; Phạm Duy Tiến </a>
+                        </td>
+                        <td>0129 434 567</td>
+                        <td>duytien@major.edu.vn</td>
+                        <td>VTT, KĐ, KL, TP..</td>
+                        <td>
+                          <a href="salesman-detail.html">
+                            <button class="btn-success"><i class="fas fa-user-edit"></i></button>
+                          </a>
+                          <button class="btn-danger"><i class="fas fa-user-times"></i></button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>SM02</td>
+                        <td>
+                          <a href="salesman-detail.html"> <img src="img/ava2.png" alt="Avatar" class="avatar" /> &nbsp; Trần Thị Xuân Tuyền </a>
+                        </td>
+                        <td>078 434 567</td>
+                        <td>xuantuyenn@major.edu.vn</td>
+                        <td>VL, ĐĐ, NGT, TVQ..</td>
+                        <td>
+                          <a href="salesman-detail.html">
+                            <button class="btn-success"><i class="fas fa-user-edit"></i></button>
+                          </a>
+                          <button class="btn-danger"><i class="fas fa-user-times"></i></button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>SM03</td>
+                        <td>
+                          <a href="salesman-detail.html"> <img src="img/ava3.png" alt="Avatar" class="avatar" /> &nbsp; Nguyễn Văn Thái </a>
+                        </td>
+                        <td>0129 434 567</td>
+                        <td>vana@major.edu.vn</td>
+                        <td>VTT, KĐ, KL, TP..</td>
+                        <td>
+                          <a href="salesman-detail.html">
+                            <button class="btn-success"><i class="fas fa-user-edit"></i></button>
+                          </a>
+                          <button class="btn-danger"><i class="fas fa-user-times"></i></button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>SM04</td>
+                        <td>
+                          <a href="salesman-detail.html"> <img src="img/ava4.png" alt="Avatar" class="avatar" /> &nbsp; Lê Thị Ngọc </a>
+                        </td>
+                        <td>0129 434 567</td>
+                        <td>lengoc@major.edu.vn</td>
+                        <td>VTT, KĐ, BG, TP..</td>
+                        <td>
+                          <a href="salesman-detail.html">
+                            <button class="btn-success"><i class="fas fa-user-edit"></i></button>
+                          </a>
+                          <button class="btn-danger"><i class="fas fa-user-times"></i></button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>SM05</td>
+                        <td>
+                          <a href="salesman-detail.html"> <img src="img/ava5.png" alt="Avatar" class="avatar" /> &nbsp; Trịnh Thị Nhi </a>
+                        </td>
+                        <td>0129 434 567</td>
+                        <td>trinhnhi@major.edu.vn</td>
+                        <td>VTT, KĐ, BG, TP..</td>
+                        <td>
+                          <a href="salesman-detail.html">
+                            <button class="btn-success"><i class="fas fa-user-edit"></i></button>
+                          </a>
+                          <button class="btn-danger"><i class="fas fa-user-times"></i></button>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
           </div>
           <!-- /.container-fluid -->
         </div>
@@ -191,7 +296,7 @@
         <footer class="sticky-footer bg-white">
           <div class="container my-auto">
             <div class="copyright text-center my-auto">
-              <span>Copyright &copy; Major Education 2021</span>
+              <span>Copyright &copy; Major Education 2020</span>
             </div>
           </div>
         </footer>
@@ -206,12 +311,12 @@
       <i class="fas fa-angle-up"></i>
     </a>
 
-    <!-- Add Modal-->
+    <!-- Add New Salesman Modal-->
     <div class="modal fade bd-example-modal-lg" id="addModal" tabindex="-1" role="dialog" aria-labelledby="addModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="addModalLabel">Add new Salesman</h5>
+            <h5 class="modal-title" id="addModalLabel" style="font-weight: bold">Add new Salesman</h5>
             <button class="close" type="button" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">×</span>
             </button>
@@ -220,7 +325,7 @@
             <form>
               <div class="form-group" style="width: 14%; display: inline-block; margin-right: 40px">
                 <label class="form-label">ID</label>
-                <input type="text" class="form-control mb-1" value="SL06" readonly />
+                <input type="text" class="form-control mb-1" value="SM06" readonly />
               </div>
               <div class="form-group" style="width: 80%; display: inline-block">
                 <label class="form-label">Full name</label>

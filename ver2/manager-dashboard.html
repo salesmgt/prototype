@@ -32,52 +32,54 @@
 
         <!-- Nav Item - Dashboard -->
         <li class="nav-item active">
-          <a class="nav-link" href="index.html">
+          <a class="nav-link" href="manager-dashboard.html">
             <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>Dashboard</span>
           </a>
         </li>
 
-        <!-- Divider -->
-        <hr class="sidebar-divider" />
-
-        <!-- Heading -->
-        <div class="sidebar-heading">My Work</div>
+        <!-- Nav Item - Pages Collapse Menu -->
+        <li class="nav-item">
+          <a class="nav-link collapsed" href="manager-reports.html">
+            <i class="fas fa-tasks"></i>
+            <span>Reports</span>
+          </a>
+        </li>
 
         <!-- Nav Item - Pages Collapse Menu -->
         <li class="nav-item">
-          <a class="nav-link collapsed" href="https://www.figma.com/proto/flTpULC7t7Vb6S0YGsJbfA/Major?node-id=142%3A2&scaling=min-zoom">
+          <a
+            class="nav-link"
+            href="manager-targets-my.html"
+            data-toggle="collapse"
+            data-target="#typeOfTargets"
+            aria-expanded="true"
+            aria-controls="typeOfTargets"
+          >
+            <i class="fas fa-school"></i>
+            <span>Target Schools</span>
+          </a>
+
+          <div id="typeOfTargets" class="collapse">
+            <div class="collapse-inner rounded">
+              <a class="collapse-item" href="manager-targets-my.html">My Target Schools</a>
+              <a class="collapse-item" href="manager-targets-all.html">All Target Schools</a>
+            </div>
+          </div>
+        </li>
+
+        <!-- Nav Item - Pages Collapse Menu -->
+        <li class="nav-item">
+          <a class="nav-link collapsed" href="manager-workplan.html">
             <i class="fas fa-calendar-alt"></i>
             <span>Workplan</span>
           </a>
         </li>
 
-        <!-- Divider -->
-        <hr class="sidebar-divider" />
-
-        <!-- Heading -->
-        <div class="sidebar-heading">Management</div>
-
-        <!-- Nav Item - Pages Collapse Menu -->
-        <li class="nav-item">
-          <a class="nav-link collapsed" href="school-mgt-1.html">
-            <i class="fas fa-school"></i>
-            <span>Schools</span>
-          </a>
-        </li>
-
-        <!-- Nav Item - Charts -->
-        <li class="nav-item">
-          <a class="nav-link" href="task-mgt-my.html">
-            <i class="fas fa-tasks"></i>
-            <span>Tasks</span></a
-          >
-        </li>
-
         <!-- Nav Item - Tables -->
         <li class="nav-item">
-          <a class="nav-link" href="salesman-mgt.html">
-            <i class="fas fa-user-alt"></i>
+          <a class="nav-link" href="manager-salesmen.html">
+            <i class="fas fa-user-friends"></i>
             <span>Salesmen</span></a
           >
         </li>
@@ -102,7 +104,15 @@
             <ul class="navbar-nav ml-auto">
               <!-- Nav Item - Alerts -->
               <li class="nav-item dropdown no-arrow mx-1">
-                <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  id="alertsDropdown"
+                  role="button"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                >
                   <i class="fas fa-bell fa-fw"></i>
                   <!-- Counter - Alerts -->
                   <span class="badge badge-danger badge-counter">3+</span>
@@ -181,7 +191,9 @@
             <!-- Page Heading -->
             <div class="d-sm-flex align-items-center justify-content-between mb-4">
               <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
-              <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
+              <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"
+                ><i class="fas fa-download fa-sm text-white-50"></i> Generate Report</a
+              >
             </div>
 
             <!-- Content Row -->
@@ -233,7 +245,14 @@
                           </div>
                           <div class="col">
                             <div class="progress progress-sm mr-2">
-                              <div class="progress-bar bg-success" role="progressbar" style="width: 75%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                              <div
+                                class="progress-bar bg-success"
+                                role="progressbar"
+                                style="width: 75%"
+                                aria-valuenow="50"
+                                aria-valuemin="0"
+                                aria-valuemax="100"
+                              ></div>
                             </div>
                           </div>
                         </div>
