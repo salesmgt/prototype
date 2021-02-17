@@ -255,7 +255,8 @@
                   <div style="width: 7rem; display: inline-block; margin-right: 0.1rem">
                     <label class="form-label">Customer Type</label>
                     <select class="custom-select">
-                      <option selected>Mới</option>
+                      <option selected>Tất cả</option>
+                      <option>Mới</option>
                       <option>Cũ</option>
                     </select>
                   </div>
@@ -316,10 +317,12 @@
                   </div>
 
                   <div class="action-buttons" style="display: inline-block; margin-left: 490px">
-                    <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#addModal">
+                    <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#createTargetModal">
                       <i class="fas fa-plus"></i> &nbsp;Create</button
                     >&nbsp;
-                    <button class="btn btn-outline-primary"><i class="fas fa-user-plus"></i>&nbsp;Assign</button>
+                    <button class="btn btn-outline-primary" data-toggle="modal" data-target="#assignSalesmanModal">
+                      <i class="fas fa-user-plus"></i>&nbsp;Assign
+                    </button>
                   </div>
                 </div>
                 <br />
@@ -350,7 +353,7 @@
                         <td>Chăm sóc</td>
                         <td>01/02/2021</td>
                         <td>01/03/2021</td>
-                        <td><span class="badge badge-info" style="width: 4.5rem">In progress</span></td>
+                        <td><span class="badge badge-info" style="width: 5rem">In progress</span></td>
                         <td></td>
                         <td>
                           <div class="dropright">
@@ -375,7 +378,7 @@
                         <td>Tái ký</td>
                         <td>20/01/2021</td>
                         <td></td>
-                        <td><span class="badge badge-info" style="width: 4.5rem">In progress</span></td>
+                        <td><span class="badge badge-info" style="width: 5rem">In progress</span></td>
                         <td>Giới thiệu khóa học Toán Khoa</td>
                         <td>
                           <div class="dropright">
@@ -400,7 +403,7 @@
                         <td>Sales mới</td>
                         <td>15/01/2021</td>
                         <td></td>
-                        <td><span class="badge badge-info" style="width: 4.5rem">In progress</span></td>
+                        <td><span class="badge badge-info" style="width: 5rem">In progress</span></td>
                         <td>Giới thiệu khóa học Abacus</td>
                         <td>
                           <div class="dropright">
@@ -600,7 +603,7 @@
                         <td>Chăm sóc</td>
                         <td>01/02/2021</td>
                         <td>01/03/2021</td>
-                        <td><span class="badge badge-info" style="width: 4.5rem">In progress</span></td>
+                        <td><span class="badge badge-info" style="width: 5rem">In progress</span></td>
                         <td></td>
                         <td>
                           <div class="dropright">
@@ -625,7 +628,7 @@
                         <td>Tái ký</td>
                         <td>20/01/2021</td>
                         <td></td>
-                        <td><span class="badge badge-info" style="width: 4.5rem">In progress</span></td>
+                        <td><span class="badge badge-info" style="width: 5rem">In progress</span></td>
                         <td>Giới thiệu khóa học Toán Khoa</td>
                         <td>
                           <div class="dropright">
@@ -646,7 +649,7 @@
                         <td><a href="" data-toggle="modal" data-target="#viewTargetModal">TH Hùng Vương</a></td>
                         <td>5</td>
                         <td>Cô Yên</td>
-                        <td>Tiến</td>
+                        <td></td>
                         <td>Sales mới</td>
                         <td></td>
                         <td></td>
@@ -696,12 +699,12 @@
                         <td><a href="" data-toggle="modal" data-target="#viewTargetModal">TH Lê Đức Thọ</a></td>
                         <td>5</td>
                         <td>Thầy Bình</td>
-                        <td>Ngọc</td>
+                        <td></td>
                         <td>Chăm sóc</td>
                         <td></td>
                         <td></td>
                         <td></td>
-                        <td>Trường khai trương CN mới</td>
+                        <td>Trường khai trương cơ sở mới</td>
                         <td>
                           <div class="dropright">
                             <button class="btn-secondary" type="button" id="configMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -850,7 +853,7 @@
                         <td>Chăm sóc</td>
                         <td>01/02/2021</td>
                         <td>01/03/2021</td>
-                        <td><span class="badge badge-info" style="width: 4.5rem">In progress</span></td>
+                        <td><span class="badge badge-info" style="width: 5rem">In progress</span></td>
                         <td></td>
                         <td>
                           <div class="dropright">
@@ -871,7 +874,7 @@
                         <td><a href="" data-toggle="modal" data-target="#viewTargetModal">TH Phan Chu Trinh</a></td>
                         <td>6</td>
                         <td>Cô Xuân</td>
-                        <td>Tuyền</td>
+                        <td></td>
                         <td>Tái ký</td>
                         <td></td>
                         <td></td>
@@ -900,7 +903,7 @@
                         <td>Sales mới</td>
                         <td>15/01/2021</td>
                         <td></td>
-                        <td><span class="badge badge-info" style="width: 4.5rem">In progress</span></td>
+                        <td><span class="badge badge-info" style="width: 5rem">In progress</span></td>
                         <td>Giới thiệu khóa học Abacus</td>
                         <td>
                           <div class="dropright">
@@ -921,7 +924,7 @@
                         <td><a href="" data-toggle="modal" data-target="#viewTargetModal">THPT Trần Văn Quang</a></td>
                         <td>7</td>
                         <td>Thầy Thịnh</td>
-                        <td>Tuyền</td>
+                        <td></td>
                         <td></td>
                         <td></td>
                         <td></td>
@@ -1071,7 +1074,7 @@
                         <td><a href="" data-toggle="modal" data-target="#viewTargetModal">THCS Nguyễn Gia Thiều</a></td>
                         <td>5</td>
                         <td>Thầy Vượng</td>
-                        <td>Thái</td>
+                        <td></td>
                         <td>Sales mới</td>
                         <td></td>
                         <td></td>
@@ -1120,12 +1123,12 @@
       <i class="fas fa-angle-up"></i>
     </a>
 
-    <!--Modal "View reports"-->
-    <div class="modal fade bd-example-modal-lg" id="viewReportModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <!--Modal "Create Target details"-->
+    <div class="modal fade bd-example-modal-lg" id="createTargetModal" tabindex="-1" role="dialog" aria-hidden="true">
       <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="addModalLabel" style="font-weight: bold">Create Report</h5>
+            <h5 class="modal-title" id="addModalLabel" style="font-weight: bold">Add Target Schools</h5>
             <button class="close" type="button" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">×</span>
             </button>
@@ -1152,14 +1155,6 @@
                   <input type="date" class="form-control" data-provide="datepicker" style="width: 14rem; display: inline-block; margin-left: 0.5rem" />
                   <!-- id="datepicker" -->
                 </div>
-                <!-- <script type="text/javascript">
-                  $(function () {
-                    var dateNow = new Date()
-                    $('#datepicker').datetimepicker({
-                      defaultDate: dateNow,
-                    })
-                  })
-                </script> -->
                 <div class="col-sm">
                   Purpose:
                   <select class="custom-select" style="width: 14rem; display: inline-block; margin-left: 0.5rem">
@@ -1204,6 +1199,257 @@
           <div class="modal-footer">
             <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
             <button class="btn btn-primary" type="button" data-dismiss="modal">Save</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--Modal "Assign salesmen to schools"-->
+    <div class="modal fade bd-example-modal-lg" id="assignSalesmanModal" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="addModalLabel" style="font-weight: bold">Assign salesmen to schools</h5>
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <div class="modal-body" style="padding: 20px 30px 20px 30px">
+            <div class="container" style="margin-bottom: 0.7rem; padding-left: 0">
+              <div class="row" style="margin-bottom: 0.5rem">
+                <div class="col-sm">
+                  PIC <br />
+                  <div class="dropdown">
+                    <button
+                      class="btn btn-outline-secondary border dropdown-toggle"
+                      type="button"
+                      data-toggle="dropdown"
+                      aria-haspopup="true"
+                      aria-expanded="true"
+                      style="width: 11.5rem"
+                    >
+                      <a style="text-decoration: none"> <img src="img/undraw_profile.svg" width="35px" /> &nbsp; Duy Tiến </a>
+                    </button>
+                    <ul class="dropdown-menu">
+                      <li class="dropdown-item" style="padding-bottom: 0.1rem">
+                        <a style="text-decoration: none"> <img src="img/undraw_profile.svg" width="35px" /> &nbsp; Duy Tiến </a>
+                      </li>
+                      <li class="dropdown-item" style="padding-bottom: 0.1rem">
+                        <a style="text-decoration: none"> <img src="img/tuyen-ava.jpg" width="35px" /> &nbsp; Tuyền </a>
+                      </li>
+                      <li class="dropdown-item" style="padding-bottom: 0.1rem">
+                        <a style="text-decoration: none"><img src="img/undraw_profile_2.svg" width="35px" /> &nbsp; Thái</a>
+                      </li>
+                      <li class="dropdown-item" style="padding-bottom: 0.1rem">
+                        <a style="text-decoration: none"><img src="img/undraw_profile_1.svg" width="35px" /> &nbsp; Ngọc</a>
+                      </li>
+                      <li class="dropdown-item">
+                        <a style="text-decoration: none"><img src="img/undraw_profile_3.svg" width="35px" /> &nbsp; Huyên</a>
+                      </li>
+                    </ul>
+                  </div>
+                  <!-- <select class="custom-select" style="width: 10rem">
+                    <option selected>Duy Tiến</option>
+                    <option>Tuyền</option>
+                    <option>Thái</option>
+                    <option>Ngọc</option>
+                    <option>Huyên</option>
+                  </select> -->
+                </div>
+                <div class="col-sm">
+                  Start date
+                  <input type="date" class="form-control" data-provide="datepicker" style="width: 11.5rem" />
+                </div>
+                <div class="col-sm">
+                  End date
+                  <input type="date" class="form-control" data-provide="datepicker" style="width: 11.5rem" />
+                </div>
+              </div>
+            </div>
+            <br />
+
+            <h5>List of assigned schools:</h5>
+            <div class="table-responsive">
+              <table class="table table-striped table-bordered dt-responsive" id="dataTable" width="100%" cellspacing="0">
+                <thead class="thead-dark">
+                  <tr>
+                    <th>#</th>
+                    <th>School name</th>
+                    <th>Purpose</th>
+                    <th>Start date</th>
+                    <th>End date</th>
+                    <th>PIC</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>1</td>
+                    <td>TH Hùng Vương</td>
+                    <td>Sales mới</td>
+                    <td><input class="form-control" type="text" style="width: 7rem" /></td>
+                    <td><input class="form-control" type="text" style="width: 7rem" /></td>
+                    <td>
+                      <select class="custom-select" style="width: 7rem">
+                        <option selected>Duy Tiến</option>
+                        <option>Tuyền</option>
+                        <option>Thái</option>
+                        <option>Ngọc</option>
+                        <option>Huyên</option>
+                      </select>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td>THCS Nguyễn Gia Thiều</td>
+                    <td>Sales mới</td>
+                    <td><input class="form-control" type="text" value="20/02/2021" style="width: 7rem" /></td>
+                    <td><input class="form-control" type="text" value="30/02/2021" style="width: 7rem" /></td>
+                    <td>
+                      <select class="custom-select" style="width: 7rem">
+                        <option selected>Duy Tiến</option>
+                        <option>Tuyền</option>
+                        <option>Thái</option>
+                        <option>Ngọc</option>
+                        <option>Huyên</option>
+                      </select>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>3</td>
+                    <td>THPT Trần Văn Quang</td>
+                    <td>Sales mới</td>
+                    <td><input class="form-control" type="text" value="25/02/2021" style="width: 7rem" /></td>
+                    <td><input class="form-control" type="text" style="width: 7rem" /></td>
+                    <td>
+                      <select class="custom-select" style="width: 7rem">
+                        <option>Duy Tiến</option>
+                        <option selected>Tuyền</option>
+                        <option>Thái</option>
+                        <option>Ngọc</option>
+                        <option>Huyên</option>
+                      </select>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>4</td>
+                    <td>TH Lê Đức Thọ</td>
+                    <td>Chăm sóc</td>
+                    <td><input class="form-control" type="text" value="01/03/2021" style="width: 7rem" /></td>
+                    <td><input class="form-control" type="text" value="05/03/2021" style="width: 7rem" /></td>
+                    <td>
+                      <select class="custom-select" style="width: 7rem">
+                        <option selected>Duy Tiến</option>
+                        <option>Tuyền</option>
+                        <option>Thái</option>
+                        <option>Ngọc</option>
+                        <option>Huyên</option>
+                      </select>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+            <button class="btn btn-success" type="button" data-dismiss="modal">Save</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--Modal "View reports"-->
+    <div class="modal fade bd-example-modal-lg" id="viewReportModal" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog modal-xl" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="addModalLabel" style="font-weight: bold">View Reports</h5>
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <div class="modal-body" style="padding: 20px 30px 0 30px">
+            Reports of school:
+            <!-- <input type="text" class="form-control mb-1" value="THPT Phan Tây Hồ" readonly style="width: 16rem; display: inline-block; margin-left: 0.5rem" /> -->
+            <b style="font-size: larger; color: #4e73df; margin-left: 0.5rem">TH Phan Chu Trinh</b>
+            <br />
+            <div class="container" style="margin-top: 0.2rem; margin-bottom: 0.7rem">
+              <div class="row">
+                <div class="col-sm"><b>District:</b> 6</div>
+                <div class="col-sm"><b>Purpose:</b> <b style="color: #4e73df">Tái ký</b></div>
+                <div class="col-sm"><b>Task status:</b> <span class="badge badge-info" style="width: 5rem">In progress</span></div>
+              </div>
+              <div class="row">
+                <div class="col-sm"><b>Principal:</b> Cô Xuân</div>
+                <div class="col-sm"><b>PIC:</b> <b style="color: #4e73df">Xuân Tuyền</b></div>
+                <div class="col-sm"><b>Start date:</b> <b style="color: #fd7e14">01/02/2021</b></div>
+                <!-- <div class="col-sm">End Date: <b style="color: lightgray">(none)</b></div> -->
+              </div>
+              <div class="row">
+                <div class="col-sm"><b>Customer type:</b> Cũ</div>
+                <div class="col-sm"><b>Assigned by:</b> Duy Tiến</div>
+                <div class="col-sm"><b>End date:</b> <b style="color: #fd7e14">01/03/2021</b></div>
+              </div>
+            </div>
+
+            <hr class="sidebar-divider" style="margin-bottom: 1.2rem" />
+
+            <div class="table-responsive">
+              <table class="table table-striped table-bordered dt-responsive" id="dataTable" width="100%" cellspacing="0">
+                <thead class="thead-dark">
+                  <tr>
+                    <th>Date</th>
+                    <th>Result</th>
+                    <th>Description</th>
+                    <th>Positivity</th>
+                    <th>Difficulty</th>
+                    <th>Solutions</th>
+                    <th>Comments</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>17/02/2021</td>
+                    <td>Đã gặp HT</td>
+                    <td>Tặng quà Tết, tạo quan hệ</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>09/02/2021</td>
+                    <td>Chưa gặp HT</td>
+                    <td>Thầy bận họp, hẹn qua Tết</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>02/02/2021</td>
+                    <td>Đã gặp HT</td>
+                    <td>Đã ngỏ ý tái ký thêm 2 năm</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>01/02/2021</td>
+                    <td>Chưa gặp HT</td>
+                    <td>Thầy bận đột xuất, hẹn mai quay lại</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-secondary" type="button" data-dismiss="modal">Close</button>
           </div>
         </div>
       </div>
@@ -1211,7 +1457,7 @@
 
     <!--Modal "View Target details"-->
     <div class="modal fade bd-example-modal-lg" id="viewTargetModal" tabindex="-1" role="dialog" aria-hidden="true">
-      <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-dialog" role="document" style="max-width: 85%;">
         <div class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title" id="addModalLabel" style="font-weight: bold">Target School Details</h5>
@@ -1219,80 +1465,123 @@
               <span aria-hidden="true">×</span>
             </button>
           </div>
-          <div class="modal-body" style="padding: 20px 30px 0 30px">
-            Report for school:
-            <!-- <input type="text" class="form-control mb-1" value="THPT Phan Tây Hồ" readonly style="width: 16rem; display: inline-block; margin-left: 0.5rem" /> -->
-            <b style="font-size: larger; color: #4e73df; margin-left: 0.5rem">THPT Phan Tây Hồ</b>
-            <br />
-            <div class="container" style="margin-top: 0.2rem; margin-bottom: 0.7rem">
+          <div class="modal-body" style="padding: 15px 0">
+            <div class="container" style="margin: 0.2rem 0 0.7rem 0">
               <div class="row">
-                <div class="col-sm">District: <b style="color: #4e73df">9</b></div>
-                <div class="col-sm">Princicpal: <b style="color: #4e73df">Thầy Huy</b></div>
-                <div class="col-sm">Status: <b>Cũ</b></div>
-              </div>
-            </div>
+                <!-- Left side - School's details -->
+                <div class="col-8" style="border-right: 3px solid lightgray">
+                  <b>School: </b><b style="font-size: larger; color: #4e73df; margin-left: 0.5rem">THPT Phan Tây Hồ</b>
+                  <br />
+                  <!-- Tabs navs -->
+                  <ul class="nav nav-tabs mb-3"  style="margin-top: 0.5rem" >
+                    <li class="nav-item active">
+                      <a class="nav-link active" data-toggle="tab" href="#general-tab">General Info</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" data-toggle="tab" href="#history-tab">History</a>
+                    </li>
+                  </ul>
+                  <!-- Tabs content -->
+                  <div class="tab-content">
+                    <div class="tab-pane fade show active" id="general-tab">
+                      <div class="container" style="margin-bottom: 1rem">
+                        <div class="row" style="margin-bottom: 0.25rem">
+                          <div class="col-sm"><b style="font-size: larger;">School's Info:</b></div>
+                        </div>
+                        <div class="row" style="margin-bottom: 0.25rem">
+                          <div class="col-sm-7"><b style="color: #858796;">Level: </b>Trung học phổ thông</div>
+                          <div class="col-sm-5"><b style="color: #858796;">Type: </b>Công lập</div>
+                        </div>
+                        <div class="row" style="margin-bottom: 0.25rem">
+                          <div class="col-sm-7"><b style="color: #858796;">Scale: </b>Vừa</div>
+                          <div class="col-sm-5"><b style="color: #858796;">Status: </b>Cũ</div>
+                        </div>
+                        <div class="row" style="margin-bottom: 0.25rem">
+                          <div class="col-sm"><b style="color: #858796;">Address: </b>172 Đỗ Xuân Hợp, P.Phú Hữu, Q9</div>
+                          <div class="col-sm"><b style="color: #858796;">Tel: </b>028 3123.456</div>
+                        </div>
+                        <div class="row">
+                          <div class="col-sm"><b style="color: #858796;">Description: </b>--</div>
+                        </div>
+                      </div>
+                      <!-- <br/> -->
+                      <hr class="sidebar-divider my-0" style="width: 20rem; align-items: center;" />
+                      <!-- <br/> -->
+                      <div class="container" style="margin-top: 1rem">
+                        <div class="row" style="margin-bottom: 0.25rem">
+                          <div class="col-sm"><b style="font-size: larger;">Principal's Info:</b></div>
+                        </div>
+                        <div class="row" style="margin-bottom: 0.25rem">
+                          <div class="col-sm">
+                            <b style="color: #858796;">Full name: </b>
+                            <b style="color: #4e73df;">Thầy Nguyễn Hoàng Huy</b></div>
+                        </div>
+                        <div class="row" style="margin-bottom: 0.25rem">
+                          <div class="col-sm"><b style="color: #858796;">Email: </b>huynh.pth@gmail.com</div>
+                          <div class="col-sm"><b style="color: #858796;">Phone: </b>0987.654.321</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="tab-pane fade" id="history-tab">
+                      History
+                    </div>
+                  </div>
 
-            <hr class="sidebar-divider" style="margin-bottom: 1.2rem" />
+                </div>
 
-            <div class="container" style="margin-bottom: 0.7rem; padding-left: 0">
-              <div class="row" style="margin-bottom: 0.5rem">
-                <div class="col-sm">
-                  Date:
-                  <input type="date" class="form-control" data-provide="datepicker" style="width: 14rem; display: inline-block; margin-left: 0.5rem" />
-                  <!-- id="datepicker" -->
-                </div>
-                <!-- <script type="text/javascript">
-                  $(function () {
-                    var dateNow = new Date()
-                    $('#datepicker').datetimepicker({
-                      defaultDate: dateNow,
-                    })
-                  })
-                </script> -->
-                <div class="col-sm">
-                  Purpose:
-                  <select class="custom-select" style="width: 14rem; display: inline-block; margin-left: 0.5rem">
-                    <option selected>Sales mới</option>
-                    <option>Chăm sóc</option>
-                    <option>Tái ký</option>
-                  </select>
-                </div>
-              </div>
-              <div class="row" style="margin-bottom: 0.5rem">
-                <div class="col-2">Result:</div>
-                <div class="col-10">
-                  <input type="text" class="form-control mb-1" />
-                </div>
-              </div>
-              <div class="row" style="margin-bottom: 0.5rem">
-                <div class="col-2">Description:</div>
-                <div class="col-10">
-                  <textarea class="form-control" rows="2"></textarea>
-                </div>
-              </div>
-              <div class="row" style="margin-bottom: 0.5rem">
-                <div class="col-2">Positivity:</div>
-                <div class="col-10">
-                  <input type="text" class="form-control mb-1" />
-                </div>
-              </div>
-              <div class="row" style="margin-bottom: 0.5rem">
-                <div class="col-2">Difficulty:</div>
-                <div class="col-10">
-                  <input type="text" class="form-control mb-1" />
-                </div>
-              </div>
-              <div class="row" style="margin-bottom: 0.5rem">
-                <div class="col-2">Solution:</div>
-                <div class="col-10">
-                  <input type="text" class="form-control mb-1" />
+                <!-- Right side - Task's details -->
+                <div class="col-4">
+                  <div class="container" style="padding-left: 10px">
+                    <div class="row" style="margin-bottom: 0.5rem">
+                      <div class="col">
+                        <b>Task status:</b> <br />
+                        <span class="badge badge-info" style="width: 8rem; font-size: 1.05em; ">In progress</span>
+                      </div>
+                      <div class="col">
+                        <button class="btn btn-success" type="button"><i class="fas fa-check"></i>&nbsp; Mark as Done</button>
+                      </div>
+                    </div>
+                    <div class="row" style="margin-bottom: 0.5rem">
+                      <div class="col">
+                        <b>PIC:</b> <br />
+                        <input type="text" class="form-control" value="Thái" readonly style="width: 8rem" />
+                      </div>
+                      <div class="col">
+                        <b>Previous PIC:</b> <br />
+                        <input type="text" class="form-control" value="Tuyền" readonly style="width: 8rem" />
+                      </div>
+                    </div>
+                    <div class="row" style="margin-bottom: 0.5rem">
+                      <div class="col">
+                        <b>Start date:</b>
+                        <input type="text" class="form-control" value="01/02/2021	" readonly style="width: 8rem" />
+                      </div>
+                      <div class="col">
+                        <b>End date:</b>
+                        <input type="text" class="form-control" value="01/03/2021" readonly style="width: 8rem" />
+                      </div>
+                    </div>
+                    <!-- <div class="row" style="margin-bottom: 0.5rem">
+                    </div> -->
+                    <div class="row" style="margin-bottom: 0.5rem">
+                      <div class="col">
+                        <b>Purpose:</b> <br />
+                        <input type="text" class="form-control" value="Chăm sóc" readonly style="width: 8rem" />
+                      </div>
+                    </div>
+                    <div class="row" style="margin-bottom: 0.5rem">
+                      <div class="col">
+                        <b>Note:</b>
+                        <textarea class="form-control" rows="2" readonly></textarea>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
           <div class="modal-footer">
-            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-            <button class="btn btn-primary" type="button" data-dismiss="modal">Save</button>
+            <button class="btn btn-secondary" type="button" data-dismiss="modal">Close</button>
           </div>
         </div>
       </div>
@@ -1300,80 +1589,104 @@
 
     <!--Modal "Assign Task"-->
     <div class="modal fade bd-example-modal-lg" id="assignTaskModal" tabindex="-1" role="dialog" aria-hidden="true">
-      <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-dialog modal-xl" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="addModalLabel" style="font-weight: bold">Create Report</h5>
+            <h5 class="modal-title" id="addModalLabel" style="font-weight: bold">Assign Target School</h5>
             <button class="close" type="button" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">×</span>
             </button>
           </div>
-          <div class="modal-body" style="padding: 20px 30px 0 30px">
-            Report for school:
-            <!-- <input type="text" class="form-control mb-1" value="THPT Phan Tây Hồ" readonly style="width: 16rem; display: inline-block; margin-left: 0.5rem" /> -->
-            <b style="font-size: larger; color: #4e73df; margin-left: 0.5rem">THPT Phan Tây Hồ</b>
-            <br />
+          <div class="modal-body" style="padding: 15px 0">
             <div class="container" style="margin-top: 0.2rem; margin-bottom: 0.7rem">
               <div class="row">
-                <div class="col-sm">District: <b style="color: #4e73df">9</b></div>
-                <div class="col-sm">Princicpal: <b style="color: #4e73df">Thầy Huy</b></div>
-                <div class="col-sm">Status: <b>Cũ</b></div>
-              </div>
-            </div>
+                <div class="col-7" style="border-right: 1px solid lightgray">
+                  <b>School name: </b><b style="font-size: larger; color: #4e73df; margin-left: 0.5rem">THPT Trần Văn Quang</b>
+                  <br />
+                  <div class="container" style="margin-top: 0.2rem">
+                    <div class="row" style="margin-bottom: 0.25rem">
+                      <div class="col-sm-7"><b style="color: #858796;">Level: </b>Trung học phổ thông</div>
+                      <div class="col-sm-5"><b style="color: #858796;">Type: </b>Công lập</div>
+                    </div>
+                    <div class="row" style="margin-bottom: 0.25rem">
+                      <div class="col-sm-7"><b style="color: #858796;">Scale: </b>Vừa</div>
+                      <div class="col-sm-5"><b style="color: #858796;">Status: </b>Mới</div>
+                    </div>
+                    <div class="row" style="margin-bottom: 0.25rem">
+                      <div class="col-sm"><b style="color: #858796;">Tel: </b>028 3123.456</div>
+                    </div>
+                    <div class="row" style="margin-bottom: 0.25rem">
+                      <div class="col-sm"><b style="color: #858796;">Address: </b>120 Huỳnh Tấn Phát, P.Phú Mỹ, Q7</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-sm"><b style="color: #858796;">Description: </b>--</div>
+                    </div>
+                  </div>
+                  <br /><br />
+                  <b>Princicpal: </b><b style="color: #4e73df; margin-left: 0.5rem">Thầy Nguyễn Hoàng Thịnh</b>
+                  <br />
+                  <div class="container" style="margin-top: 0.2rem">
+                    <div class="row" style="margin-bottom: 0.25rem">
+                      <div class="col-sm"><b style="color: #858796;">Tel: </b>0987.654.321</div>
+                    </div>
+                    <div class="row" style="margin-bottom: 0.25rem">
+                      <div class="col-sm"><b style="color: #858796;">Email: </b>thinhnh.tvq@gmail.com</div>
+                    </div>
+                  </div>
+                </div>
 
-            <hr class="sidebar-divider" style="margin-bottom: 1.2rem" />
-
-            <div class="container" style="margin-bottom: 0.7rem; padding-left: 0">
-              <div class="row" style="margin-bottom: 0.5rem">
-                <div class="col-sm">
-                  Date:
-                  <input type="date" class="form-control" data-provide="datepicker" style="width: 14rem; display: inline-block; margin-left: 0.5rem" />
-                  <!-- id="datepicker" -->
-                </div>
-                <div class="col-sm">
-                  Purpose:
-                  <select class="custom-select" style="width: 14rem; display: inline-block; margin-left: 0.5rem">
-                    <option selected>Sales mới</option>
-                    <option>Chăm sóc</option>
-                    <option>Tái ký</option>
-                  </select>
-                </div>
-              </div>
-              <div class="row" style="margin-bottom: 0.5rem">
-                <div class="col-2">Result:</div>
-                <div class="col-10">
-                  <input type="text" class="form-control mb-1" />
-                </div>
-              </div>
-              <div class="row" style="margin-bottom: 0.5rem">
-                <div class="col-2">Description:</div>
-                <div class="col-10">
-                  <textarea class="form-control" rows="2"></textarea>
-                </div>
-              </div>
-              <div class="row" style="margin-bottom: 0.5rem">
-                <div class="col-2">Positivity:</div>
-                <div class="col-10">
-                  <input type="text" class="form-control mb-1" />
-                </div>
-              </div>
-              <div class="row" style="margin-bottom: 0.5rem">
-                <div class="col-2">Difficulty:</div>
-                <div class="col-10">
-                  <input type="text" class="form-control mb-1" />
-                </div>
-              </div>
-              <div class="row" style="margin-bottom: 0.5rem">
-                <div class="col-2">Solution:</div>
-                <div class="col-10">
-                  <input type="text" class="form-control mb-1" />
+                <div class="col-5">
+                  <div class="container" style="padding-left: 10px">
+                    <div class="row" style="margin-bottom: 0.5rem">
+                      <div class="col-sm">
+                        <b>PIC:</b> <br />
+                        <select class="custom-select" style="width: 10.7rem">
+                          <option>Duy Tiến</option>
+                          <option>Huyên</option>
+                          <option selected>Tuyền</option>
+                          <option>Thái</option>
+                          <option>Ngọc</option>
+                        </select>
+                      </div>
+                      <div class="col-sm">
+                        <b>Previous PIC:</b> <br />
+                        <input type="text" class="form-control" readonly style="width: 10.7rem" />
+                      </div>
+                    </div>
+                    <div class="row" style="margin-bottom: 0.5rem">
+                      <div class="col-sm">
+                        <b>Start date:</b>
+                        <input type="date" class="form-control" data-provide="datepicker" style="width: 10.7rem" />
+                      </div>
+                      <div class="col-sm">
+                        <b>End date:</b>
+                        <input type="date" class="form-control" data-provide="datepicker" style="width: 10.7rem" />
+                      </div>
+                    </div>
+                    <div class="row" style="margin-bottom: 0.5rem">
+                      <div class="col-sm">
+                        <b>Purpose:</b> <br />
+                        <select class="custom-select" style="width: 10.7rem">
+                          <option>Sales mới</option>
+                          <option selected>Chăm sóc</option>
+                          <option>Tái ký</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="row" style="margin-bottom: 0.5rem">
+                      <div class="col-sm">
+                        <b>Note:</b>
+                        <textarea class="form-control" rows="2"></textarea>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
           <div class="modal-footer">
             <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-            <button class="btn btn-primary" type="button" data-dismiss="modal">Save</button>
+            <button class="btn btn-success" type="button" data-dismiss="modal">Save</button>
           </div>
         </div>
       </div>
