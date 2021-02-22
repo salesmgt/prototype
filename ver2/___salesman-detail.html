@@ -4,16 +4,15 @@
     <meta charset="utf-8" />
     <!--  This file has been downloaded from bootdey.com    @bootdey on twitter -->
     <!--  All snippets are MIT license http://bootdey.com/license -->
-    <title>Task Detail</title>
+    <title>Salesman Detail</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <link href="http://netdna.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet" />
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
 
-    <!-- Custom styles for this template -->
-    <link href="css/sb-admin-2.css" rel="stylesheet" />
     <link href="css/detail-pages.css" rel="stylesheet" />
+    <link href="css/sb-admin-2.css" rel="stylesheet" />
 
     <style type="text/css">
       .ui-w-80 {
@@ -110,6 +109,45 @@
         padding: 0.85rem 1.5rem;
         border-color: rgba(24, 28, 33, 0.03) !important;
       }
+
+      /*=======================View history by year=======================*/
+      .year-accordion {
+        background-color: #eee;
+        color: #444;
+        cursor: pointer;
+        padding: 10px;
+        margin-bottom: 5px;
+        width: 100%;
+        border: none;
+        border-bottom: 0.5px darkblue dashed;
+        text-align: left;
+        transition: 0.4s;
+      }
+
+      .btn-active,
+      .year-accordion:hover {
+        background-color: #ccc;
+      }
+
+      .year-accordion:after {
+        content: '\002B';
+        color: darkblue;
+        font-weight: bold;
+        float: right;
+        margin-left: 5px;
+      }
+
+      .btn-active:after {
+        content: '\2212';
+      }
+
+      .panel {
+        padding: 0 18px;
+        background-color: white;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.2s ease-out;
+      }
     </style>
   </head>
   <body id="page-top">
@@ -127,54 +165,52 @@
 
         <!-- Nav Item - Dashboard -->
         <li class="nav-item">
-          <a class="nav-link" href="manager-dashboard.html">
+          <a class="nav-link" href="index.html">
             <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>Dashboard</span>
           </a>
         </li>
 
-        <!-- Nav Item - Pages Collapse Menu -->
-        <li class="nav-item">
-          <a class="nav-link collapsed" href="manager-reports.html">
-            <i class="fas fa-tasks"></i>
-            <span>Reports</span>
-          </a>
-        </li>
+        <!-- Divider -->
+        <hr class="sidebar-divider" />
 
-        <!-- Nav Item - Pages Collapse Menu -->
-        <li class="nav-item active">
-          <a
-            class="nav-link"
-            href="manager-targets-my.html"
-            data-toggle="collapse"
-            data-target="#typeOfTargets"
-            aria-expanded="true"
-            aria-controls="typeOfTargets"
-          >
-            <i class="fas fa-school"></i>
-            <span>Target Schools</span>
-          </a>
-
-          <div id="typeOfTargets" class="collapse">
-            <div class="collapse-inner rounded">
-              <a class="collapse-item" href="manager-targets-my.html">My Target Schools</a>
-              <a class="collapse-item" href="manager-targets-all.html">All Target Schools</a>
-            </div>
-          </div>
-        </li>
+        <!-- Heading -->
+        <div class="sidebar-heading">My Work</div>
 
         <!-- Nav Item - Pages Collapse Menu -->
         <li class="nav-item">
-          <a class="nav-link collapsed" href="manager-workplan.html">
+          <a class="nav-link collapsed" href="https://www.figma.com/proto/flTpULC7t7Vb6S0YGsJbfA/Major?node-id=142%3A2&scaling=min-zoom">
             <i class="fas fa-calendar-alt"></i>
             <span>Workplan</span>
           </a>
         </li>
 
-        <!-- Nav Item - Tables -->
+        <!-- Divider -->
+        <hr class="sidebar-divider" />
+
+        <!-- Heading -->
+        <div class="sidebar-heading">Management</div>
+
+        <!-- Nav Item - Pages Collapse Menu -->
         <li class="nav-item">
-          <a class="nav-link" href="manager-salesmen.html">
-            <i class="fas fa-user-friends"></i>
+          <a class="nav-link collapsed" href="school-mgt-1.html">
+            <i class="fas fa-school"></i>
+            <span>Schools</span>
+          </a>
+        </li>
+
+        <!-- Nav Item - Charts -->
+        <li class="nav-item">
+          <a class="nav-link" href="task-mgt-my.html">
+            <i class="fas fa-tasks"></i>
+            <span>Tasks</span></a
+          >
+        </li>
+
+        <!-- Nav Item - Tables -->
+        <li class="nav-item active">
+          <a class="nav-link" href="salesman-mgt.html">
+            <i class="fas fa-user-alt"></i>
             <span>Salesmen</span></a
           >
         </li>
@@ -199,15 +235,7 @@
             <ul class="navbar-nav ml-auto">
               <!-- Nav Item - Alerts -->
               <li class="nav-item dropdown no-arrow mx-1">
-                <a
-                  class="nav-link dropdown-toggle"
-                  href="#"
-                  id="alertsDropdown"
-                  role="button"
-                  data-toggle="dropdown"
-                  aria-haspopup="true"
-                  aria-expanded="false"
-                >
+                <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <i class="fas fa-bell fa-fw"></i>
                   <!-- Counter - Alerts -->
                   <span class="badge badge-danger badge-counter">3+</span>
@@ -285,174 +313,152 @@
           <div class="container light-style flex-grow-1 container-p-y">
             <!-- Page Heading -->
             <div class="d-sm-flex align-items-center justify-content-between mb-4">
-              <h1 class="h3 mb-0 text-gray-800">Task detail</h1>
+              <h1 class="h3 mb-0 text-gray-800">Salesman detail</h1>
             </div>
 
             <div class="card overflow-hidden">
               <div class="row no-gutters row-bordered row-border-light">
                 <div class="col-md-3 pt-0">
                   <div class="list-group list-group-flush account-settings-links">
-                    <a class="list-group-item list-group-item-action active" data-toggle="list" href="#task-general">Task</a>
-                    <a class="list-group-item list-group-item-action" data-toggle="list" href="#task-reports">Reports</a>
-                    <a class="list-group-item list-group-item-action" data-toggle="list" href="#task-history">History</a>
+                    <a class="list-group-item list-group-item-action active" data-toggle="list" href="#salesman-info">General</a>
+                    <a class="list-group-item list-group-item-action" data-toggle="list" href="#salesman-assinged-school">Assigned schools</a>
+                    <a class="list-group-item list-group-item-action" data-toggle="list" href="#salesman-reports">Reports</a>
                   </div>
                 </div>
                 <div class="col-md-9">
                   <div class="tab-content">
-                    <div class="tab-pane fade active show" id="task-general">
+                    <div class="tab-pane fade active show" id="salesman-info">
                       <div class="card-body">
-                        <h4 style="margin-bottom: 15px">School information</h4>
-                        <div class="form-group">
-                          <label class="form-label">School name <span style="color: red">*</span></label>
-                          <input type="text" class="form-control mb-1" value="Tiểu học Hùng Vương" />
+                        <h4>General information</h4>
+                      </div>
+                      <div class="card-body media align-items-center">
+                        <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="avatar" class="d-block ui-w-80" style="border-radius: 50%" />
+                        <div class="media-body ml-4">
+                          <label class="btn btn-outline-primary">
+                            Upload new photo
+                            <input type="file" class="account-settings-fileinput" />
+                          </label>
+                          <div class="text-light small mt-1">Allowed JPG, GIF or PNG. Max size of 800K</div>
                         </div>
-                        <div class="form-group" style="width: 30%; display: inline-block; text-align: left">
-                          <label class="form-label">School type</label>
-                          <select class="custom-select">
-                            <option selected>Công lập</option>
-                            <option>Ngoài công lập</option>
-                          </select>
-                        </div>
-                        <div class="form-group" style="width: 30%; display: inline-block; margin-left: 150px">
-                          <label class="form-label">Educational stage</label>
-                          <select class="custom-select">
-                            <option selected>Tiểu học</option>
-                            <option>Trung học cơ sở</option>
-                            <option>Trung học phổ thông</option>
-                            <option>Trường liên cấp</option>
-                          </select>
-                        </div>
-                        <div class="form-group" style="display: block; float: none">
-                          <label class="form-label">Phone number</label>
-                          <input type="text" class="form-control mb-1" value="028 3894 7992" />
-                        </div>
-                        <div class="form-group" style="width: 67%; display: block; float: left">
-                          <label class="form-label">Address</label>
-                          <input type="text" class="form-control" value="124 Hùng Vương, P.11" />
-                        </div>
-                        <div class="form-group" style="width: 25%; display: inline-block; margin-left: 58.5px">
-                          <label class="form-label">Area</label>
-                          <select class="custom-select">
-                            <option>Quận 1</option>
-                            <option>Quận 2</option>
-                            <option>Quận 3</option>
-                            <option>Quận 4</option>
-                            <option selected>Quận 5</option>
-                            <option>Quận 6</option>
-                            <option>Quận 7</option>
-                            <option>Quận 8</option>
-                            <option>Quận 9</option>
-                            <option>Quận 10</option>
-                            <option>Quận 11</option>
-                            <option>Quận 12</option>
-                            <option>Quận Bình Tân</option>
-                            <option>Quận Bình Thạnh</option>
-                            <option>Quận Gò Vấp</option>
-                            <option>Quận Phú Nhuận</option>
-                            <option>Quận Tân Bình</option>
-                            <option>Quận Tân Phú</option>
-                            <option>Quận Thủ Đức</option>
-                            <option>Huyện Bình Chánh</option>
-                            <option>Huyện Cần Giờ</option>
-                            <option>Huyện Củ Chi</option>
-                            <option>Huyện Hóc Môn</option>
-                            <option>Huyện Nhà Bè</option>
-                          </select>
-                        </div>
-                        <div class="form-group">
-                          <label class="form-label">Description</label>
-                          <textarea class="form-control" rows="3"> - Quy mô lớn: 37 lớp</textarea>
-                        </div>
-                        <hr />
+                      </div>
+                      <hr class="border-light m-0" />
 
-                        <h4 style="margin-bottom: 15px">Contacts</h4>
-                        <div class="form-group" style="width: 45%; display: inline-block">
-                          <label class="form-label">Fullname</label>
-                          <input type="text" class="form-control mb-1" value="Nguyễn Vân Yên" />
+                      <div class="card-body">
+                        <div class="form-group">
+                          <label class="form-label">Full name</label>
+                          <input type="text" class="form-control mb-1" value="Phạm Duy Tiến" />
                         </div>
-                        <div class="form-group" style="width: 45%; display: inline-block; margin-left: 60px">
-                          <label class="form-label">Role</label>
-                          <input type="text" class="form-control" value="Hiệu trưởng" />
-                        </div>
-                        <div class="form-group" style="width: 45%; display: inline-block">
+                        <div class="form-group">
                           <label class="form-label">Phone number</label>
-                          <input type="text" class="form-control mb-1" value="090 395 1117" />
+                          <input type="text" class="form-control" value="0963 281 235" />
                         </div>
-                        <div class="form-group" style="width: 45%; display: inline-block; margin-left: 60px">
+                        <div class="form-group">
                           <label class="form-label">Email</label>
-                          <input type="text" class="form-control mb-1" value="vanthu@thpthv.vn" />
-                        </div>
-                        <hr />
-
-                        <div style="width: 100%">
-                          <h4 style="display: inline-block; margin-bottom: 15px; margin-right: 420px">Task Assignment</h4>
-                          <button type="button" class="btn btn-success" style="display: inline-block">Mark as Done</button>
-                        </div>
-                        <div class="form-group" style="width: 30%; display: inline-block">
-                          <label class="form-label">Current PIC <span style="color: red">*</span></label>
-                          <select class="custom-select">
-                            <option selected>Duy Tiến</option>
-                            <option>Huyên</option>
-                            <option>Tuyền</option>
-                            <option>Thái</option>
-                            <option>Ngọc</option>
-                          </select>
-                        </div>
-                        <div class="form-group" style="width: 30%; display: inline-block; margin-left: 150px">
-                          <label class="form-label">Previous PIC</label>
-                          <input type="text" class="form-control mb-1" value="(none)" disabled />
-                        </div>
-                        <div class="form-group">
-                          <div style="width: 30%; display: inline-block; margin-right: 20px">
-                            <label class="form-label">Status <span style="color: red">*</span></label>
-                            <select class="custom-select">
-                              <option>Mới</option>
-                              <option selected>Tiềm năng</option>
-                              <option>Đang hợp tác</option>
-                              <option>Đã ngưng hợp tác</option>
-                            </select>
-                          </div>
-                          <!-- from
-                          <div style="width: 12%; display: inline-block; margin-left: 20px">
-                            <select class="custom-select">
-                              <option selected disabled hidden>--</option>
-                              <option>2011</option>
-                              <option>2012</option>
-                              <option>2013</option>
-                              <option>2014</option>
-                              <option>2015</option>
-                              <option>2016</option>
-                              <option>2017</option>
-                              <option>2018</option>
-                              <option>2019</option>
-                              <option>2020</option>
-                              <option>2021</option>
-                            </select>
-                          </div> -->
-                        </div>
-                        <div class="form-group">
-                          <label class="form-label">Note</label>
-                          <textarea class="form-control" rows="3"> </textarea>
+                          <input type="text" class="form-control mb-1" value="duytien@truongvietanh.com" />
                         </div>
                       </div>
                     </div>
 
-                    <div class="tab-pane fade" id="task-reports">
+                    <div class="tab-pane fade" id="salesman-assinged-school">
                       <div class="card-body pb-2">
-                        <div style="display: inline-block; margin-right: 380px">
-                          <h4>School Reports</h4>
-                          <h6 style="font-weight: bold">Schoool name: Tiểu học Hùng Vương</h6>
+                        <h4>Assigned schools</h4>
+                        <br />
+                        <!--Dùng Accordion-->
+                        <button class="year-accordion">2016</button>
+                        <div class="panel">
+                          <ul>
+                            <li style="color: #1cc88a">TH Phú Định</li>
+                            <li style="color: #1cc88a">TH Lam Sơn</li>
+                            <li style="color: #1cc88a">THCS Long Trường</li>
+                            <li style="color: #cc554a">THPT Nguyễn Văn Tăng</li>
+                            <li style="color: #cc554a">THPT Long Trường</li>
+                            <li style="color: #1cc88a">THPT Phước Long</li>
+                            <li style="color: #cc554a">THPT Nguyễn Du</li>
+                          </ul>
                         </div>
-                        <div style="display: inline-block; margin-bottom: 15px">
-                          <button class="btn btn-warning"><i class="fas fa-pen"></i> Add</button>
+
+                        <button class="year-accordion">2017</button>
+                        <div class="panel">
+                          <ul>
+                            <li style="color: #cc554a">TH Vĩnh Xuyên</li>
+                            <li style="color: #1cc88a">TH Nguyễn Thiện Thuật</li>
+                            <li style="color: #1cc88a">THCS Hoàng Quốc Việt</li>
+                            <li style="color: #cc554a">THCS Phạm Hữu Lầu</li>
+                            <li style="color: #1cc88a">THPT Nguyễn An Ninh</li>
+                            <li style="color: #1cc88a">THPT Sương Nguyệt Anh</li>
+                            <li style="color: #1cc88a">THPT Nguyễn Trung Trực</li>
+                          </ul>
                         </div>
+
+                        <button class="year-accordion">2018</button>
+                        <div class="panel">
+                          <ul>
+                            <li style="color: #1cc88a">TH Nhật Tảo</li>
+                            <li style="color: #1cc88a">TH Hùng Vương</li>
+                            <li style="color: #1cc88a">TH Phù Đổng</li>
+                            <li style="color: #1cc88a">THCS Tăng Nhơn Phú B</li>
+                            <li style="color: #1cc88a">THCS Trường Thạnh</li>
+                            <li style="color: #1cc88a">Trường THPT Hàn Thuyên</li>
+                            <li style="color: #1cc88a">TH, THCS và THPT Vạn Hạnh</li>
+                          </ul>
+                        </div>
+
+                        <button class="year-accordion">2019</button>
+                        <div class="panel">
+                          <ul>
+                            <li style="color: #1cc88a">TH Đặng Nguyên Cẩn</li>
+                            <li style="color: #1cc88a">TH Phạm Văn Chí</li>
+                            <li style="color: #1cc88a">THCS Long Trường</li>
+                            <li style="color: #1cc88a">THCS Hoàng Quốc Việt</li>
+                            <li style="color: #cc554a">THCS Huỳnh Tấn Phát</li>
+                            <li style="color: #1cc88a">THPT Trường Chinh</li>
+                            <li style="color: #cc554a">THPT Thạnh Lộc</li>
+                          </ul>
+                        </div>
+
+                        <button class="year-accordion">2020</button>
+                        <div class="panel">
+                          <ul>
+                            <li style="color: #1cc88a">TH Him Lam</li>
+                            <li style="color: #1cc88a">TH Mỹ Thủy</li>
+                            <li style="color: #cc554a">TH Tân Quy</li>
+                            <li style="color: #1cc88a">THCS Nguyễn Hữu Thọ</li>
+                            <li style="color: #1cc88a">THCS Trần Quốc Tuấn</li>
+                            <li style="color: #858796">THPT Lữ Gia</li>
+                            <li style="color: #858796">TH, THCS và THPT Trương Vĩnh Ký</li>
+                          </ul>
+                        </div>
+
+                        <script>
+                          var acc = document.getElementsByClassName('year-accordion')
+                          var i
+
+                          for (i = 0; i < acc.length; i++) {
+                            acc[i].addEventListener('click', function () {
+                              this.classList.toggle('btn-active')
+                              var panel = this.nextElementSibling
+                              if (panel.style.maxHeight) {
+                                panel.style.maxHeight = null
+                              } else {
+                                panel.style.maxHeight = panel.scrollHeight + 'px'
+                              }
+                            })
+                          }
+                        </script>
+                      </div>
+                    </div>
+
+                    <div class="tab-pane fade" id="salesman-reports">
+                      <div class="card-body pb-2">
+                        <h4>School Reports</h4>
                         <br />
                         <table class="table table-hover table-bordered table-striped">
-                          <thead class="thead thead-dark">
+                          <thead class="thead-dark">
                             <tr>
                               <th>#</th>
                               <th>Date</th>
-                              <th>PIC</th>
+                              <th>School</th>
+                              <th>District</th>
                               <th>Purpose</th>
                               <th>Result</th>
                               <th>Description</th>
@@ -462,7 +468,8 @@
                             <tr>
                               <td>1</td>
                               <td>01/11/2019</td>
-                              <td>Tuyền</td>
+                              <td>TH Hùng Vương</td>
+                              <td>5</td>
                               <td>Sales mới</td>
                               <td>Đã gặp HT</td>
                               <td>Thầy rất thiện chí muốn hợp tác</td>
@@ -470,7 +477,8 @@
                             <tr>
                               <td>2</td>
                               <td>09/11/2019</td>
-                              <td>Tuyền</td>
+                              <td>THCS Đống Đa</td>
+                              <td>Gò Vấp</td>
                               <td>Sales mới</td>
                               <td>Chưa gặp được HT</td>
                               <td>Thầy đi công tác đột xuất</td>
@@ -478,73 +486,41 @@
                             <tr>
                               <td>3</td>
                               <td>15/11/2019</td>
-                              <td>Tuyền</td>
+                              <td>THPT Ngô Quyền</td>
+                              <td>Bình Tân</td>
                               <td>Sales mới</td>
                               <td>Đã gặp HT</td>
-                              <td>Ký thành công hợp đồng khóa tiếng Anh 1 năm</td>
+                              <td>Gặp ngắn do thầy bận họp</td>
                             </tr>
                             <tr>
                               <td>4</td>
                               <td>30/12/2019</td>
-                              <td>Tuyền</td>
-                              <td>Chăm sóc</td>
-                              <td>Đã gặp HT</td>
-                              <td>Tặng quà Tết cho Đại diện trường</td>
+                              <td>TH Duy Tân</td>
+                              <td>Tân Phú</td>
+                              <td>Sales mới</td>
+                              <td>Chưa gặp được HT</td>
+                              <td>Địa chỉ Google sai</td>
                             </tr>
                             <tr>
                               <td>5</td>
                               <td>19/05/2020</td>
-                              <td>Ngọc</td>
+                              <td>TH Quang Trung</td>
+                              <td>12</td>
                               <td>Tái ký</td>
                               <td>Đã gặp HT</td>
-                              <td>Thầy đồng ý tái ký chương trình tiếng Anh 1 năm</td>
+                              <td>Tái ký thành công khóa tiếng Anh 1 năm</td>
                             </tr>
                             <tr>
                               <td>6</td>
                               <td>27/08/2020</td>
-                              <td>Ngọc</td>
-                              <td>Ký mới</td>
+                              <td>THPT Nguyễn Thượng Hiền</td>
+                              <td>10</td>
+                              <td>Chăm sóc</td>
                               <td>Đã gặp HT</td>
-                              <td>Ký thành công khóa học Toán Tư duy Abacus</td>
+                              <td>Tặng quà mừng thành lập trường</td>
                             </tr>
                           </tbody>
                         </table>
-                      </div>
-                      <hr class="border-light m-0" />
-                    </div>
-
-                    <div class="tab-pane fade" id="task-history">
-                      <!--Ai đã chăm sóc vào năm nào, dừng ở step nào-->
-                      <div class="card-body pb-2">
-                        <h4>History</h4>
-                        <br />
-                        <ul class="timeline">
-                          <li class="event" data-date="2020">
-                            <h3 style="display: inline-block">Tái ký hợp đồng 1 năm</h3>
-                            <h3 style="text-align: right; display: inline-block; margin-left: 255px">
-                              <em style="color: orangered">Tuyền</em><i style="color: gray"> phụ trách</i>
-                            </h3>
-                            <ul>
-                              <li>Đã tiếp nhận thông tin từ người phụ trách trước (Ngọc)</li>
-                              <li>Đã hẹn gặp trường thành công</li>
-                              <li>Đã tái ký thành công chương trình tiếng Anh</li>
-                              <li>Ký mới khóa học Toán Tư duy Abacus cho HS khối 1+2</li>
-                            </ul>
-                          </li>
-                          <hr />
-                          <li class="event" data-date="2019">
-                            <h3 style="display: inline-block">Ký thành công hợp đồng 1 năm</h3>
-                            <h3 style="text-align: right; display: inline-block; margin-left: 195px">
-                              <em style="color: orangered">Ngọc</em><i style="color: gray"> phụ trách</i>
-                            </h3>
-                            <ul>
-                              <li>Đã hẹn gặp thành công</li>
-                              <li>Đã gặp thầy giới thiệu về Major Education</li>
-                              <li>Đã lấy thông tin cần thiết</li>
-                              <li>Đã ký hợp đồng cung cấp 5 GV bản xứ cho trường</li>
-                            </ul>
-                          </li>
-                        </ul>
                       </div>
                     </div>
                   </div>
@@ -553,12 +529,12 @@
             </div>
 
             <div class="text-right mt-3">
-              <a href="task-mgt-my.html">
+              <a href="salesman-mgt.html">
                 <button type="button" class="btn btn-primary">Save changes</button>
               </a>
               &nbsp;
-              <a href="task-mgt-my.html">
-                <button type="button" class="btn btn-secondary">Cancel</button>
+              <a href="salesman-mgt.html">
+                <button type="button" class="btn btn-default">Cancel</button>
               </a>
             </div>
           </div>
@@ -605,7 +581,6 @@
     <!-- JS của cái ruột-->
     <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
     <script src="http://netdna.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script type="text/javascript"></script>
   </body>
 </html>

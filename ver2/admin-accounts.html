@@ -33,55 +33,19 @@
         <!-- Divider -->
         <hr class="sidebar-divider my-0" />
 
-        <!-- Nav Item - Dashboard -->
-        <li class="nav-item">
-          <a class="nav-link" href="index.html">
-            <i class="fas fa-fw fa-tachometer-alt"></i>
-            <span>Dashboard</span>
-          </a>
-        </li>
-
-        <!-- Divider -->
-        <hr class="sidebar-divider" />
-
-        <!-- Heading -->
-        <div class="sidebar-heading">My Work</div>
-
         <!-- Nav Item - Pages Collapse Menu -->
         <li class="nav-item">
-          <a class="nav-link collapsed" href="https://www.figma.com/proto/flTpULC7t7Vb6S0YGsJbfA/Major?node-id=142%3A2&scaling=min-zoom">
-            <i class="fas fa-calendar-alt"></i>
-            <span>Workplan</span>
-          </a>
-        </li>
-
-        <!-- Divider -->
-        <hr class="sidebar-divider" />
-
-        <!-- Heading -->
-        <div class="sidebar-heading">Management</div>
-
-        <!-- Nav Item - Pages Collapse Menu -->
-        <li class="nav-item">
-          <a class="nav-link collapsed" href="school-mgt-1.html">
+          <a class="nav-link collapsed" href="admin-schools.html">
             <i class="fas fa-school"></i>
             <span>Schools</span>
           </a>
         </li>
 
-        <!-- Nav Item - Charts -->
-        <li class="nav-item">
-          <a class="nav-link" href="task-mgt-my.html">
-            <i class="fas fa-tasks"></i>
-            <span>Tasks</span></a
-          >
-        </li>
-
         <!-- Nav Item - Tables -->
         <li class="nav-item active">
-          <a class="nav-link" href="salesman-mgt.html">
-            <i class="fas fa-user-alt"></i>
-            <span>Salesmen</span></a
+          <a class="nav-link" href="admin-accounts.html">
+            <i class="fas fa-users"></i>
+            <span>Accounts</span></a
           >
         </li>
 
@@ -164,10 +128,6 @@
                     <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                     Profile
                   </a>
-                  <a class="dropdown-item" href="#">
-                    <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-                    Settings
-                  </a>
                   <div class="dropdown-divider"></div>
                   <a class="dropdown-item" href="login.html">
                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
@@ -182,7 +142,7 @@
           <!-- Begin Page Content -->
           <div class="container-fluid">
             <!-- Page Heading -->
-            <h1 class="h3 mb-2 text-gray-800">Salesman Management</h1>
+            <h1 class="h3 mb-2 text-gray-800">Accounts Management</h1>
 
             <!-- DataTales Example -->
             <div class="card shadow mb-4">
@@ -194,93 +154,78 @@
                   </div>
                 </div>
                 <br />
-                <div class="table-responsive">
+                <div class="table-responsive" style="margin-top: 2rem">
                   <table class="table table-striped table-bordered dt-responsive" id="dataTable" width="100%" cellspacing="0">
                     <thead class="thead-dark">
                       <tr>
-                        <th>No.</th>
+                        <th>ID</th>
                         <th>Full name</th>
                         <th>Phone</th>
                         <th>Email</th>
-                        <th>Asigned schools</th>
-                        <th>Actions</th>
+                        <th>Birth date</th>
+                        <th>Address</th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr>
                         <td>SM01</td>
                         <td>
-                          <a href="salesman-detail.html"> <img src="img/ava1.png" alt="Avatar" class="avatar" /> &nbsp; Phạm Duy Tiến </a>
+                          <a href="" data-toggle="modal" data-target="#viewSalesmanModal">
+                            <img src="img/ava1.png" alt="Avatar" class="avatar" /> &nbsp; Phạm Duy Tiến
+                          </a>
                         </td>
                         <td>0129 434 567</td>
                         <td>duytien@major.edu.vn</td>
-                        <td>VTT, KĐ, KL, TP..</td>
-                        <td>
-                          <a href="salesman-detail.html">
-                            <button class="btn-success"><i class="fas fa-user-edit"></i></button>
-                          </a>
-                          <button class="btn-danger"><i class="fas fa-user-times"></i></button>
-                        </td>
+                        <td>17-02-1988</td>
+                        <td>123 Lê Quang Định, Bình Thạnh</td>
                       </tr>
                       <tr>
                         <td>SM02</td>
                         <td>
-                          <a href="salesman-detail.html"> <img src="img/ava2.png" alt="Avatar" class="avatar" /> &nbsp; Trần Thị Xuân Tuyền </a>
+                          <a href="" data-toggle="modal" data-target="#viewSalesmanModal">
+                            <img src="img/tuyen-ava.jpg" alt="Avatar" class="avatar" /> &nbsp; Trần Thị Xuân Tuyền
+                          </a>
                         </td>
                         <td>078 434 567</td>
                         <td>xuantuyenn@major.edu.vn</td>
-                        <td>VL, ĐĐ, NGT, TVQ..</td>
-                        <td>
-                          <a href="salesman-detail.html">
-                            <button class="btn-success"><i class="fas fa-user-edit"></i></button>
-                          </a>
-                          <button class="btn-danger"><i class="fas fa-user-times"></i></button>
-                        </td>
+                        <td>30-12-1992</td>
+                        <td>24 Quang Trung, Q12</td>
                       </tr>
                       <tr>
                         <td>SM03</td>
                         <td>
-                          <a href="salesman-detail.html"> <img src="img/ava3.png" alt="Avatar" class="avatar" /> &nbsp; Nguyễn Văn Thái </a>
+                          <a href="" data-toggle="modal" data-target="#viewSalesmanModal">
+                            <img src="img/ava3.png" alt="Avatar" class="avatar" /> &nbsp; Nguyễn Văn Thái
+                          </a>
                         </td>
                         <td>0129 434 567</td>
                         <td>vana@major.edu.vn</td>
-                        <td>VTT, KĐ, KL, TP..</td>
-                        <td>
-                          <a href="salesman-detail.html">
-                            <button class="btn-success"><i class="fas fa-user-edit"></i></button>
-                          </a>
-                          <button class="btn-danger"><i class="fas fa-user-times"></i></button>
-                        </td>
+                        <td>05-05-1990</td>
+                        <td>54 Nguyễn Đình Chiểu, Q1</td>
                       </tr>
                       <tr>
                         <td>SM04</td>
                         <td>
-                          <a href="salesman-detail.html"> <img src="img/ava4.png" alt="Avatar" class="avatar" /> &nbsp; Lê Thị Ngọc </a>
+                          <a href="" data-toggle="modal" data-target="#viewSalesmanModal">
+                            <img src="img/ava4.png" alt="Avatar" class="avatar" /> &nbsp; Lê Thị Ngọc
+                          </a>
                         </td>
                         <td>0129 434 567</td>
                         <td>lengoc@major.edu.vn</td>
-                        <td>VTT, KĐ, BG, TP..</td>
-                        <td>
-                          <a href="salesman-detail.html">
-                            <button class="btn-success"><i class="fas fa-user-edit"></i></button>
-                          </a>
-                          <button class="btn-danger"><i class="fas fa-user-times"></i></button>
-                        </td>
+                        <td>29-04-1994</td>
+                        <td>45 Tôn Quyền, Q5</td>
                       </tr>
                       <tr>
                         <td>SM05</td>
                         <td>
-                          <a href="salesman-detail.html"> <img src="img/ava5.png" alt="Avatar" class="avatar" /> &nbsp; Trịnh Thị Nhi </a>
+                          <a href="" data-toggle="modal" data-target="#viewSalesmanModal">
+                            <img src="img/ava5.png" alt="Avatar" class="avatar" /> &nbsp; Trịnh Thị Nhi
+                          </a>
                         </td>
                         <td>0129 434 567</td>
                         <td>trinhnhi@major.edu.vn</td>
-                        <td>VTT, KĐ, BG, TP..</td>
-                        <td>
-                          <a href="salesman-detail.html">
-                            <button class="btn-success"><i class="fas fa-user-edit"></i></button>
-                          </a>
-                          <button class="btn-danger"><i class="fas fa-user-times"></i></button>
-                        </td>
+                        <td>17-08-1989</td>
+                        <td>333 đường Song Hành, Q.Thủ Đức</td>
                       </tr>
                     </tbody>
                   </table>
@@ -310,6 +255,294 @@
     <a class="scroll-to-top rounded" href="#page-top">
       <i class="fas fa-angle-up"></i>
     </a>
+
+    <!--Modal "View Salesman details"-->
+    <div class="modal fade bd-example-modal-lg" id="viewSalesmanModal" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="addModalLabel" style="font-weight: bold">Salesman Details</h5>
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <div class="modal-body" style="padding: 1rem 1.5rem 0.8rem 1.5rem">
+            <img src="img/tuyen-ava.jpg" alt="Avatar" class="avatar" style="width: 8.8rem; height: 8.8rem"/>
+            <b style="font-size: 2rem; color: #4e73df; margin-left: 1rem">Trần Thị Xuân Tuyền</b>
+            <!-- Tabs navs -->
+            <ul class="nav nav-tabs mb-3"  style="margin-top: 1.2rem" >
+              <li class="nav-item active">
+                <a class="nav-link active" data-toggle="tab" href="#general-tab">General Info</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#history-tab">Working History</a>
+              </li>
+            </ul>
+            <!-- Tabs content -->
+            <div class="tab-content">
+              <!-- General Tab -->
+              <div class="tab-pane fade show active" id="general-tab">
+                <div class="container">
+                  <div class="row" style="margin-bottom: 0.5rem">
+                    <div class="col-3"><b style="color: #858796;">Gender: </b></div>
+                    <div class="col-9"><img src="img/female-icon.png" style="width: 1.2rem" /> Female</div>
+                  </div>
+                  <div class="row" style="margin-bottom: 0.5rem">
+                    <div class="col-3"><b style="color: #858796;">Phone number: </b></div>
+                    <div class="col-9">078 434 567</div>
+                  </div>
+                  <div class="row" style="margin-bottom: 0.5rem">
+                    <div class="col-3"><b style="color: #858796;">Email: </b></div>
+                    <div class="col-9">xuantuyenn@major.edu.vn</div>
+                  </div>
+                  <div class="row" style="margin-bottom: 0.5rem">
+                    <div class="col-3"><b style="color: #858796;">Birth date: </b></div>
+                    <div class="col-9">30-12-1992</div>
+                  </div>
+                  <div class="row" style="margin-bottom: 0.5rem">
+                    <div class="col-3"><b style="color: #858796;">Address: </b></div>
+                    <div class="col-9">24 Quang Trung, Q12</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- History Tab-->
+              <div class="tab-pane fade" id="history-tab">
+                <!--Filters-->
+                <div class="container">
+                  <div class="row" style="margin-left: 2rem">
+                    <div class="col-sm">
+                      School year <br />
+                      <select class="custom-select" style="width: 10.5rem;">
+                        <option selected>Tất cả</option>
+                        <option>2020-2021</option>
+                        <option>2019-2020</option>
+                        <option>2018-2019</option>
+                      </select>
+                    </div>
+                    <div class="col-sm">
+                      Start date
+                      <input type="date" class="form-control" data-provide="datepicker" style="width: 10.5rem" />
+                    </div>
+                    <div class="col-sm">
+                      End date
+                      <input type="date" class="form-control" data-provide="datepicker" style="width: 10.5rem" />
+                    </div>
+                  </div>
+                </div>
+                <br/>
+                <div class="table-responsive">
+                  <table class="table table-striped table-sm dt-responsive" id="dataTable" width="100%" cellspacing="0">
+                    <thead class="thead-dark">
+                      <tr>
+                        <th></th>
+                        <th>School year</th>
+                        <th>School name</th>
+                        <th>Purpose</th>
+                        <th>Status</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr class="accordion-toggle" data-toggle="collapse" data-target="#report-1">
+                        <td><span><i class="fas fa-chevron-down"></i></span></td>
+                        <td>2020-2021</td>
+                        <td>TH Nguyễn Tất Thành</td>
+                        <td>Chăm sóc</td>
+                        <td><span class="badge badge-info" style="width: 5rem">In progress</span></td>
+                      </tr>
+                      <!--Nested Reports table for row 1-->
+                      <tr class="collapse" id="report-1">
+                        <td colspan="12">
+                          <b style="margin-left: 0.5rem;">Reports</b>
+                          <div class="table-responsive">
+                            <table class="table table-striped table-sm dt-responsive" id="dataTable" cellspacing="0" style="width: 98%; margin-left: 0.5rem;">
+                              <thead class="thead-dark">
+                                <tr>
+                                  <th>Date</th>
+                                  <th>Result</th>
+                                  <th>Description</th>
+                                  <th>Comment</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <td>17/02/2021</td>
+                                  <td>Đã gặp HT</td>
+                                  <td>Đã tặng quà Tết cho thầy</td>
+                                  <td></td>
+                                </tr>
+                                <tr>
+                                  <td>09/02/2021</td>
+                                  <td>Chưa gặp HT</td>
+                                  <td>Thầy bận họp, hẹn qua Tết gặp</td>
+                                  <td></td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr class="accordion-toggle" data-toggle="collapse" data-target="#report-2">
+                        <td><span><i class="fas fa-chevron-down"></i></span></td>
+                        <td>2020-2021</td>
+                        <td>THPT Nguyễn Trãi</td>
+                        <td>Tái ký</td>
+                        <td><span class="badge badge-success" style="width: 3.5rem">Done</span></td>
+                      </tr>
+                      <!--Nested Reports table for row 2-->
+                      <tr class="collapse" id="report-2">
+                        <td colspan="12">
+                          <b style="margin-left: 0.5rem;">Reports</b>
+                          <div class="table-responsive">
+                            <table class="table table-striped table-sm dt-responsive" id="dataTable" cellspacing="0" style="width: 98%; margin-left: 0.5rem;">
+                              <thead class="thead-dark">
+                                <tr>
+                                  <th>Date</th>
+                                  <th>Result</th>
+                                  <th>Description</th>
+                                  <th>Comment</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <td>01/09/2019</td>
+                                  <td>Đã gặp HT</td>
+                                  <td>Thầy từ chối, hẹn năm sau</td>
+                                  <td></td>
+                                </tr>
+                                <tr>
+                                  <td>15/08/2019</td>
+                                  <td>Chưa gặp HT</td>
+                                  <td>Thầy bận việc đột xuất</td>
+                                  <td></td>
+                                </tr>
+                                <tr>
+                                  <td>30/07/2019</td>
+                                  <td>Đã gặp HT</td>
+                                  <td>Thầy nói cần suy nghĩ thêm</td>
+                                  <td></td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr class="accordion-toggle" data-toggle="collapse" data-target="#report-3">
+                        <td><span><i class="fas fa-chevron-down"></i></span></td>
+                        <td>2020-2021</td>
+                        <td>THCS Lương Thế Vinh</td>
+                        <td>Chăm sóc</td>
+                        <td><span class="badge badge-info" style="width: 5rem">In progress</span></td>
+                      </tr>
+                      <!--Nested Reports table for row 3-->
+                      <tr class="collapse" id="report-3">
+                        <td colspan="12">
+                          <b style="margin-left: 0.5rem;">Reports</b>
+                          <div class="table-responsive">
+                            <table class="table table-striped table-sm dt-responsive" id="dataTable" cellspacing="0" style="width: 98%; margin-left: 0.5rem;">
+                              <thead class="thead-dark">
+                                <tr>
+                                  <th>Date</th>
+                                  <th>Result</th>
+                                  <th>Description</th>
+                                  <th>Comment</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <td>17/02/2021</td>
+                                  <td>Đã gặp HT</td>
+                                  <td>Đã tặng quà Tết cho thầy</td>
+                                  <td></td>
+                                </tr>
+                                <tr>
+                                  <td>09/02/2021</td>
+                                  <td>Chưa gặp HT</td>
+                                  <td>Thầy bận họp, hẹn qua Tết gặp</td>
+                                  <td></td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr class="accordion-toggle" data-toggle="collapse" data-target="#report-4">
+                        <td><span><i class="fas fa-chevron-down"></i></span></td>
+                        <td>2019-2020</td>
+                        <td>THPT Nguyễn Hữu Thọ</td>
+                        <td>Tái ký</td>
+                        <td><span class="badge badge-danger" style="width: 3.5rem">Failed</span></td>
+                      </tr>
+                      <!--Nested Reports table for row 4-->
+                      <tr class="collapse" id="report-4">
+                        <td colspan="12">
+                          <b style="margin-left: 0.5rem;">Reports</b>
+                          <div class="table-responsive">
+                            <table class="table table-striped table-sm dt-responsive" id="dataTable" cellspacing="0" style="width: 98%; margin-left: 0.5rem;">
+                              <thead class="thead-dark">
+                                <tr>
+                                  <th>Date</th>
+                                  <th>Result</th>
+                                  <th>Description</th>
+                                  <th>Comment</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <td>01/09/2019</td>
+                                  <td>Đã gặp HT</td>
+                                  <td>Thầy từ chối, hẹn năm sau</td>
+                                  <td></td>
+                                </tr>
+                                <tr>
+                                  <td>15/08/2019</td>
+                                  <td>Chưa gặp HT</td>
+                                  <td>Thầy bận việc đột xuất</td>
+                                  <td></td>
+                                </tr>
+                                <tr>
+                                  <td>30/07/2019</td>
+                                  <td>Đã gặp HT</td>
+                                  <td>Thầy nói cần suy nghĩ thêm</td>
+                                  <td></td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr class="accordion-toggle" data-toggle="collapse" data-target="#report-5">
+                        <td><span><i class="fas fa-chevron-down"></i></span></td>
+                        <td>2019-2020</td>
+                        <td>THCS Hoàng Diệu</td>
+                        <td>Chăm sóc</td>
+                        <td><span class="badge badge-success" style="width: 3.5rem">Done</span></td>
+                      </tr>
+                      <tr class="collapse" id="report-5">
+                        <td colspan="12">Waiting for data...</td>
+                      </tr>
+                      <tr class="accordion-toggle" data-toggle="collapse" data-target="#report-6">
+                        <td><span><i class="fas fa-chevron-down"></i></span></td>
+                        <td>2018-2019</td>
+                        <td>THPT Đinh Bộ Lĩnh</td>
+                        <td>Sales mới</td>
+                        <td><span class="badge badge-success" style="width: 3.5rem">Done</span></td>
+                      </tr>
+                      <tr class="collapse" id="report-6">
+                        <td colspan="12">Waiting for data...</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-secondary" type="button" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!-- Add New Salesman Modal-->
     <div class="modal fade bd-example-modal-lg" id="addModal" tabindex="-1" role="dialog" aria-labelledby="addModalLabel" aria-hidden="true">
