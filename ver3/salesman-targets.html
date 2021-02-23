@@ -1,0 +1,961 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>Salesman - Target Schools</title>
+
+    <!-- Custom fonts for this template -->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
+
+    <!-- Custom styles for this template -->
+    <link href="css/sb-admin-2.css" rel="stylesheet" />
+    <!--.min-->
+
+    <!-- Custom styles for this page -->
+    <link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet" />
+  </head>
+
+  <body id="page-top">
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+      <!-- Sidebar -->
+      <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+        <!-- Sidebar - Brand -->
+        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+          <img src="img/banner-major-edu.png" style="width: 99%" />
+        </a>
+
+        <!-- Divider -->
+        <hr class="sidebar-divider my-0" />
+
+        <!-- Nav Item - Dashboard -->
+        <li class="nav-item">
+          <a class="nav-link" href="salesman-dashboard.html">
+            <i class="fas fa-fw fa-tachometer-alt"></i>
+            <span>Dashboard</span>
+          </a>
+        </li>
+
+        <!-- Nav Item - Pages Collapse Menu -->
+        <li class="nav-item">
+          <a class="nav-link collapsed" href="salesman-reports.html">
+            <i class="fas fa-tasks"></i>
+            <span>Reports</span>
+          </a>
+        </li>
+
+        <!-- Nav Item - Pages Collapse Menu -->
+        <li class="nav-item active">
+          <a class="nav-link collapsed" href="salesman-targets.html">
+            <i class="fas fa-school"></i>
+            <span>Target Schools</span>
+          </a>
+        </li>
+
+        <!-- Nav Item - Pages Collapse Menu -->
+        <li class="nav-item">
+          <a class="nav-link collapsed" href="https://www.figma.com/proto/flTpULC7t7Vb6S0YGsJbfA/Major?node-id=142%3A2&scaling=min-zoom">
+            <i class="fas fa-calendar-alt"></i>
+            <span>Workplan</span>
+          </a>
+        </li>
+
+        <!-- Divider -->
+        <hr class="sidebar-divider d-none d-md-block" />
+
+        <!-- Sidebar Toggler (Sidebar) -->
+        <div class="text-center d-none d-md-inline">
+          <button class="rounded-circle border-0" id="sidebarToggle"></button>
+        </div>
+      </ul>
+      <!-- End of Sidebar -->
+
+      <!-- Content Wrapper -->
+      <div id="content-wrapper" class="d-flex flex-column">
+        <!-- Main Content -->
+        <div id="content">
+          <!-- Topbar -->
+          <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+            <!-- Topbar Navbar -->
+            <ul class="navbar-nav ml-auto">
+              <!-- Nav Item - Alerts -->
+              <li class="nav-item dropdown no-arrow mx-1">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  id="alertsDropdown"
+                  role="button"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                >
+                  <i class="fas fa-bell fa-fw"></i>
+                  <!-- Counter - Alerts -->
+                  <span class="badge badge-danger badge-counter">3+</span>
+                </a>
+                <!-- Dropdown - Alerts -->
+                <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="alertsDropdown">
+                  <h6 class="dropdown-header">Alerts Center</h6>
+                  <a class="dropdown-item d-flex align-items-center" href="#">
+                    <div class="mr-3">
+                      <div class="icon-circle bg-primary">
+                        <i class="fas fa-file-alt text-white"></i>
+                      </div>
+                    </div>
+                    <div>
+                      <div class="small text-gray-500">February 20, 2021</div>
+                      <span class="font-weight-bold">Phạm Duy Tiến has just commented on your report.</span>
+                    </div>
+                  </a>
+                  <a class="dropdown-item d-flex align-items-center" href="#">
+                    <div class="mr-3">
+                      <div class="icon-circle bg-success">
+                        <i class="fas fa-donate text-white"></i>
+                      </div>
+                    </div>
+                    <div>
+                      <div class="small text-gray-500">December 7, 2019</div>
+                      $290.29 has been deposited into your account!
+                    </div>
+                  </a>
+                  <a class="dropdown-item d-flex align-items-center" href="#">
+                    <div class="mr-3">
+                      <div class="icon-circle bg-warning">
+                        <i class="fas fa-exclamation-triangle text-white"></i>
+                      </div>
+                    </div>
+                    <div>
+                      <div class="small text-gray-500">December 2, 2019</div>
+                      Spending Alert: We've noticed unusually high spending for your account.
+                    </div>
+                  </a>
+                  <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
+                </div>
+              </li>
+
+              <div class="topbar-divider d-none d-sm-block"></div>
+
+              <!-- Nav Item - User Information -->
+              <li class="nav-item dropdown no-arrow">
+                <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <span class="mr-2 d-none d-lg-inline text-gray-600 small">Trần Thị Xuân Tuyền</span> &nbsp;
+                  <img class="img-profile rounded-circle" src="img/tuyen-ava.jpg" />
+                </a>
+                <!-- Dropdown - User Information -->
+                <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+                  <a class="dropdown-item" href="#">
+                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                    Profile
+                  </a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="login.html">
+                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                    Logout
+                  </a>
+                </div>
+              </li>
+            </ul>
+          </nav>
+          <!-- End of Topbar -->
+
+          <!-- Begin Page Content -->
+          <div class="container-fluid">
+            <!-- Page Heading -->
+            <h1 class="h3 mb-2 text-gray-800">My Target Schools</h1>
+
+            <!-- DataTales Example -->
+            <div class="card shadow mb-4" style="width: 100%; margin-top: 22px; display: block; float: none">
+              <div class="card-header py-3" style="height: 55px">
+                <!-- <h5 class="m-0 font-weight-bold text-primary" style="display: block; float: left">My Tasks</h5> -->
+                <h6 class="m-0 font-weight-bold text-primary">
+                  <i
+                    >School year
+                    <select class="custom-select" style="width: fit-content; margin-top: 0">
+                      <option selected>2020-2021</option>
+                      <option>2019-2020</option>
+                      <option>2018-2019</option>
+                      <option>2017-2018</option>
+                      <option>2016-2017</option>
+                    </select>
+                  </i>
+                </h6>
+              </div>
+              <div class="card-body">
+                <div class="filters">
+                  <div class="form-group" style="width: 11rem; display: inline-block; margin-right: 0.1rem">
+                    <label class="form-label">District</label>
+                    <select class="custom-select">
+                      <option selected>Tất cả</option>
+                      <option>Quận 1</option>
+                      <option>Quận 2</option>
+                      <option>Quận 3</option>
+                      <option>Quận 4</option>
+                      <option>Quận 5</option>
+                      <option>Quận 6</option>
+                      <option>Quận 7</option>
+                      <option>Quận 8</option>
+                      <option>Quận 9</option>
+                      <option>Quận 10</option>
+                      <option>Quận 11</option>
+                      <option>Quận 12</option>
+                      <option>Quận Bình Tân</option>
+                      <option>Quận Bình Thạnh</option>
+                      <option>Quận Gò Vấp</option>
+                      <option>Quận Phú Nhuận</option>
+                      <option>Quận Tân Bình</option>
+                      <option>Quận Tân Phú</option>
+                      <option>Quận Thủ Đức</option>
+                      <option>Huyện Bình Chánh</option>
+                      <option>Huyện Cần Giờ</option>
+                      <option>Huyện Củ Chi</option>
+                      <option>Huyện Hóc Môn</option>
+                      <option>Huyện Nhà Bè</option>
+                    </select>
+                  </div>
+                  <div style="width: 7rem; display: inline-block; margin-right: 0.1rem">
+                    <label class="form-label">Purpose</label>
+                    <select class="custom-select">
+                      <option selected>Tất cả</option>
+                      <option>Sales mới</option>
+                      <option>Chăm sóc</option>
+                    </select>
+                  </div>
+                  <div style="width: 7rem; display: inline-block; margin-right: 0.1rem">
+                    <label class="form-label">Customer Type</label>
+                    <select class="custom-select">
+                      <option selected>Tất cả</option>
+                      <option>Mới</option>
+                      <option>Cũ</option>
+                    </select>
+                  </div>
+                  <div style="width: 9.5rem; display: inline-block; margin-right: 0.1rem">
+                    <label class="form-label">School Type</label>
+                    <select class="custom-select">
+                      <option selected>Tất cả</option>
+                      <option>Công lập</option>
+                      <option>Ngoài công lập</option>
+                    </select>
+                  </div>
+                  <div style="width: 7rem; display: inline-block; margin-right: 0.1rem">
+                    <label class="form-label">School Level</label>
+                    <select class="custom-select">
+                      <option selected>Tất cả</option>
+                      <option>Tiểu học</option>
+                      <option>THCS</option>
+                      <option>THPT</option>
+                    </select>
+                  </div>
+                  <div style="width: 7rem; display: inline-block; margin-right: 0.1rem">
+                    <label class="form-label">Scale</label>
+                    <select class="custom-select">
+                      <option selected>Tất cả</option>
+                      <option>Lớn</option>
+                      <option>Vừa</option>
+                      <option>Nhỏ</option>
+                    </select>
+                  </div>
+                  <br />
+                  <div style="width: 8rem; display: inline-block; margin-right: 0.1rem">
+                    <label class="form-label">Status</label>
+                    <select class="custom-select">
+                      <option selected>Tất cả</option>
+                      <option>Done</option>
+                      <option>In progress</option>
+                      <option>Failed</option>
+                    </select>
+                  </div>
+                  <div style="width: 10.7rem; display: inline-block; margin-right: 0.1rem">
+                    <label class="form-label">From date</label>
+                    <input type="date" class="form-control" data-provide="datepicker" />
+                  </div>
+                  <div style="width: 10.7rem; display: inline-block">
+                    <label class="form-label">To date</label>
+                    <input type="date" class="form-control" data-provide="datepicker" />
+                  </div>
+                </div>
+                <br />
+                <div class="table-responsive">
+                  <table class="table table-striped table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead class="thead-dark">
+                      <tr>
+                        <th>School Name</th>
+                        <th>Dist</th>
+                        <th>Principal</th>
+                        <th>Purpose</th>
+                        <th>Start Date</th>
+                        <th>End Date</th>
+                        <th>Status</th>
+                        <th>Note</th>
+                        <th>Actions</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td><a href="" data-toggle="modal" data-target="#viewTargetModal">THPT Phan Tây Hồ</a></td>
+                        <td>9</td>
+                        <td>Thầy Huy</td>
+                        <td>Chăm sóc</td>
+                        <td>01/02/2021</td>
+                        <td>01/03/2021</td>
+                        <td><span class="badge badge-info" style="width: 5rem">In progress</span></td>
+                        <td></td>
+                        <td>
+                          <button class="btn-info" data-toggle="modal" data-target="#viewReportsModal"><i class="fas fa-clipboard-list"></i></button>
+                          <button class="btn-success" data-toggle="modal" data-target="#createReportsModal"><i class="fas fa-edit"></i></button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><a href="" data-toggle="modal" data-target="#viewTargetModal">TH Phan Chu Trinh</a></td>
+                        <td>6</td>
+                        <td>Cô Xuân</td>
+                        <td>Tái ký</td>
+                        <td>20/01/2021</td>
+                        <td></td>
+                        <td><span class="badge badge-info" style="width: 5rem">In progress</span></td>
+                        <td>Giới thiệu khóa học Toán Khoa</td>
+                        <td>
+                          <button class="btn-info" data-toggle="modal" data-target="#viewReportsModal"><i class="fas fa-clipboard-list"></i></button>
+                          <button class="btn-success" data-toggle="modal" data-target="#createReportsModal"><i class="fas fa-edit"></i></button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><a href="" data-toggle="modal" data-target="#viewTargetModal">TH Hùng Vương</a></td>
+                        <td>5</td>
+                        <td>Cô Yên</td>
+                        <td>Sales mới</td>
+                        <td>15/01/2021</td>
+                        <td></td>
+                        <td><span class="badge badge-info" style="width: 5rem">In progress</span></td>
+                        <td>Giới thiệu khóa học Abacus</td>
+                        <td>
+                          <button class="btn-info" data-toggle="modal" data-target="#viewReportsModal"><i class="fas fa-clipboard-list"></i></button>
+                          <button class="btn-success" data-toggle="modal" data-target="#createReportsModal"><i class="fas fa-edit"></i></button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><a href="" data-toggle="modal" data-target="#viewTargetModal">THPT Trần Văn Quang</a></td>
+                        <td>7</td>
+                        <td>Thầy Thịnh</td>
+                        <td>Sales mới</td>
+                        <td>02/02/2021</td>
+                        <td></td>
+                        <td><span class="badge badge-success" style="width: 3.5rem">Done</span></td>
+                        <td></td>
+                        <td>
+                          <button class="btn-info" data-toggle="modal" data-target="#viewReportsModal"><i class="fas fa-clipboard-list"></i></button>
+                          <button class="btn-success" data-toggle="modal" data-target="#createReportsModal"><i class="fas fa-edit"></i></button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><a href="" data-toggle="modal" data-target="#viewTargetModal">TH Lê Đức Thọ</a></td>
+                        <td>5</td>
+                        <td>Thầy Bình</td>
+                        <td>Chăm sóc</td>
+                        <td>20/01/2021</td>
+                        <td>30/01/2021</td>
+                        <td><span class="badge badge-success" style="width: 3.5rem">Done</span></td>
+                        <td>Quà Tết</td>
+                        <td>
+                          <button class="btn-info" data-toggle="modal" data-target="#viewReportsModal"><i class="fas fa-clipboard-list"></i></button>
+                          <button class="btn-success" data-toggle="modal" data-target="#createReportsModal"><i class="fas fa-edit"></i></button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><a href="" data-toggle="modal" data-target="#viewTargetModal">THPT Đuốc Sống</a></td>
+                        <td>8</td>
+                        <td>Cô Huyền</td>
+                        <td>Chăm sóc</td>
+                        <td>15/11/2020</td>
+                        <td>22/11/2020</td>
+                        <td><span class="badge badge-success" style="width: 3.5rem">Done</span></td>
+                        <td>Ngày Nhà giáo VN</td>
+                        <td>
+                          <button class="btn-info" data-toggle="modal" data-target="#viewReportsModal"><i class="fas fa-clipboard-list"></i></button>
+                          <button class="btn-success" data-toggle="modal" data-target="#createReportsModal"><i class="fas fa-edit"></i></button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><a href="" data-toggle="modal" data-target="#viewTargetModal">THCS Đinh Tiên Hoàng</a></td>
+                        <td>2</td>
+                        <td>Cô Thư</td>
+                        <td>Tái ký</td>
+                        <td>05/07/2020</td>
+                        <td>30/09/2020</td>
+                        <td><span class="badge badge-danger" style="width: 3.5rem">Failed</span></td>
+                        <td></td>
+                        <td>
+                          <button class="btn-info" data-toggle="modal" data-target="#viewReportsModal"><i class="fas fa-clipboard-list"></i></button>
+                          <button class="btn-success" data-toggle="modal" data-target="#createReportsModal"><i class="fas fa-edit"></i></button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><a href="" data-toggle="modal" data-target="#viewTargetModal">THPT Trần Quang Khải</a></td>
+                        <td>1</td>
+                        <td>Thầy Thảo</td>
+                        <td>Sales mới</td>
+                        <td>05/07/2020</td>
+                        <td></td>
+                        <td><span class="badge badge-success" style="width: 3.5rem">Done</span></td>
+                        <td></td>
+                        <td>
+                          <button class="btn-info" data-toggle="modal" data-target="#viewReportsModal"><i class="fas fa-clipboard-list"></i></button>
+                          <button class="btn-success" data-toggle="modal" data-target="#createReportsModal"><i class="fas fa-edit"></i></button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><a href="" data-toggle="modal" data-target="#viewTargetModal">TH Trần Khánh Dư</a></td>
+                        <td>4</td>
+                        <td>Cô Tâm</td>
+                        <td>Chăm sóc</td>
+                        <td>20/06/2020</td>
+                        <td>25/06/2020</td>
+                        <td><span class="badge badge-success" style="width: 3.5rem">Done</span></td>
+                        <td>20 năm thành lập trường</td>
+                        <td>
+                          <button class="btn-info" data-toggle="modal" data-target="#viewReportsModal"><i class="fas fa-clipboard-list"></i></button>
+                          <button class="btn-success" data-toggle="modal" data-target="#createReportsModal"><i class="fas fa-edit"></i></button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><a href="" data-toggle="modal" data-target="#viewTargetModal">THCS Nguyễn Gia Thiều</a></td>
+                        <td>5</td>
+                        <td>Thầy Vượng</td>
+                        <td>Sales mới</td>
+                        <td>10/06/2020</td>
+                        <td>30/09/2020</td>
+                        <td><span class="badge badge-danger" style="width: 3.5rem">Failed</span></td>
+                        <td></td>
+                        <td>
+                          <button class="btn-info" data-toggle="modal" data-target="#viewReportsModal"><i class="fas fa-clipboard-list"></i></button>
+                          <button class="btn-success" data-toggle="modal" data-target="#createReportsModal"><i class="fas fa-edit"></i></button>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- /.container-fluid -->
+        </div>
+        <!-- End of Main Content -->
+
+        <!-- Footer -->
+        <footer class="sticky-footer bg-white">
+          <div class="container my-auto">
+            <div class="copyright text-center my-auto">
+              <span>Copyright &copy; Major Education 2020</span>
+            </div>
+          </div>
+        </footer>
+        <!-- End of Footer -->
+      </div>
+      <!-- End of Content Wrapper -->
+    </div>
+    <!-- End of Page Wrapper -->
+
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+      <i class="fas fa-angle-up"></i>
+    </a>
+
+    <!--Modal "Create reports"-->
+    <div class="modal fade bd-example-modal-lg" id="createReportsModal" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="addModalLabel" style="font-weight: bold">Create Report</h5>
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <div class="modal-body" style="padding: 20px 30px 0 30px">
+            Report for school:
+            <!-- <input type="text" class="form-control mb-1" value="THPT Phan Tây Hồ" readonly style="width: 16rem; display: inline-block; margin-left: 0.5rem" /> -->
+            <b style="font-size: larger; color: #4e73df; margin-left: 0.5rem">TH Phan Chu Trinh</b>
+            <br />
+            <div class="container" style="margin-top: 0.2rem; margin-bottom: 0.7rem">
+              <div class="row">
+                <div class="col-sm">District: <b style="color: #4e73df">6</b></div>
+                <div class="col-sm">Princicpal: <b style="color: #4e73df">Cô Xuân</b></div>
+                <div class="col-sm">Status: <b>Cũ</b></div>
+              </div>
+            </div>
+
+            <hr class="sidebar-divider" style="margin-bottom: 1.2rem" />
+
+            <div class="container" style="margin-bottom: 0.7rem; padding-left: 0">
+              <div class="row" style="margin-bottom: 0.5rem">
+                <div class="col-sm">
+                  Date:
+                  <input type="date" class="form-control" data-provide="datepicker" style="width: 14rem; display: inline-block; margin-left: 0.5rem" />
+                  <!-- id="datepicker" -->
+                </div>
+                <!-- <script type="text/javascript">
+                  $(function () {
+                    var dateNow = new Date()
+                    $('#datepicker').datetimepicker({
+                      defaultDate: dateNow,
+                    })
+                  })
+                </script> -->
+                <div class="col-sm">
+                  Purpose:
+                  <select class="custom-select" style="width: 14rem; display: inline-block; margin-left: 0.5rem">
+                    <option>Sales mới</option>
+                    <option>Chăm sóc</option>
+                    <option selected>Tái ký</option>
+                  </select>
+                </div>
+              </div>
+              <div class="row" style="margin-bottom: 0.5rem">
+                <div class="col-2">Result:</div>
+                <div class="col-10">
+                  <input type="text" class="form-control mb-1" />
+                </div>
+              </div>
+              <div class="row" style="margin-bottom: 0.5rem">
+                <div class="col-2">Description:</div>
+                <div class="col-10">
+                  <textarea class="form-control" rows="2"></textarea>
+                </div>
+              </div>
+              <div class="row" style="margin-bottom: 0.5rem">
+                <div class="col-2">Positivity:</div>
+                <div class="col-10">
+                  <input type="text" class="form-control mb-1" />
+                </div>
+              </div>
+              <div class="row" style="margin-bottom: 0.5rem">
+                <div class="col-2">Difficulty:</div>
+                <div class="col-10">
+                  <input type="text" class="form-control mb-1" />
+                </div>
+              </div>
+              <div class="row" style="margin-bottom: 0.5rem">
+                <div class="col-2">Solution:</div>
+                <div class="col-10">
+                  <input type="text" class="form-control mb-1" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+            <button class="btn btn-success" type="button" data-dismiss="modal">Submit</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--Modal "View reports of this task"-->
+    <div class="modal fade bd-example-modal-lg" id="viewReportsModal" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog modal-xl" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="addModalLabel" style="font-weight: bold">View Reports</h5>
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <div class="modal-body" style="padding: 20px 30px 0 30px">
+            Reports of school:
+            <!-- <input type="text" class="form-control mb-1" value="THPT Phan Tây Hồ" readonly style="width: 16rem; display: inline-block; margin-left: 0.5rem" /> -->
+            <b style="font-size: larger; color: #4e73df; margin-left: 0.5rem">TH Phan Chu Trinh</b>
+            <br />
+            <div class="container" style="margin-top: 0.2rem; margin-bottom: 0.7rem">
+              <div class="row">
+                <div class="col-sm"><b>District:</b> 6</div>
+                <div class="col-sm"><b>Purpose:</b> <b style="color: #4e73df">Tái ký</b></div>
+                <div class="col-sm"><b>Status:</b> <span class="badge badge-info" style="width: 5rem">In progress</span></div>
+              </div>
+              <div class="row">
+                <div class="col-sm"><b>Principal:</b> Cô Xuân</div>
+                <div class="col-sm"><b>PIC:</b> <b style="color: #4e73df">Xuân Tuyền</b></div>
+                <div class="col-sm"><b>Start date:</b> <b style="color: #fd7e14">01/02/2021</b></div>
+                <!-- <div class="col-sm">End Date: <b style="color: lightgray">(none)</b></div> -->
+              </div>
+              <div class="row">
+                <div class="col-sm"><b>Customer type:</b> Cũ</div>
+                <div class="col-sm"><b>Assigned by:</b> Duy Tiến</div>
+                <div class="col-sm"><b>End date:</b> <b style="color: #fd7e14">01/03/2021</b></div>
+              </div>
+            </div>
+
+            <hr class="sidebar-divider" style="margin-bottom: 1.2rem" />
+
+            <div class="table-responsive">
+              <table class="table table-striped table-bordered dt-responsive" id="dataTable" width="100%" cellspacing="0">
+                <thead class="thead-dark">
+                  <tr>
+                    <th>Date</th>
+                    <th>Result</th>
+                    <th>Description</th>
+                    <th>Positivity</th>
+                    <th>Difficulty</th>
+                    <th>Solutions</th>
+                    <th>Comments</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>17/02/2021</td>
+                    <td>Đã gặp HT</td>
+                    <td>Tặng quà Tết, tạo quan hệ</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>09/02/2021</td>
+                    <td>Chưa gặp HT</td>
+                    <td>Thầy bận họp, hẹn qua Tết</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>02/02/2021</td>
+                    <td>Đã gặp HT</td>
+                    <td>Đã ngỏ ý tái ký thêm 2 năm</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>01/02/2021</td>
+                    <td>Chưa gặp HT</td>
+                    <td>Thầy bận đột xuất, hẹn mai quay lại</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-secondary" type="button" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--Modal "View Target details"-->
+    <div class="modal fade bd-example-modal-lg" id="viewTargetModal" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog" role="document" style="max-width: 85%;">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="addModalLabel" style="font-weight: bold">Target School Details</h5>
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <div class="modal-body" style="padding: 15px 0">
+            <div class="container" style="margin: 0.2rem 0 0.7rem 0">
+              <div class="row">
+                <!-- Left side - School's details -->
+                <div class="col-8" style="border-right: 3px solid lightgray">
+                  <b>School: </b><b style="font-size: larger; color: #4e73df; margin-left: 0.5rem">THPT Phan Tây Hồ</b>
+                  <br />
+                  <!-- Tabs navs -->
+                  <ul class="nav nav-tabs mb-3"  style="margin-top: 0.5rem" >
+                    <li class="nav-item active">
+                      <a class="nav-link active" data-toggle="tab" href="#general-tab">General Info</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" data-toggle="tab" href="#history-tab">History</a>
+                    </li>
+                  </ul>
+                  <!-- Tabs content -->
+                  <div class="tab-content">
+                    <!-- General Tab -->
+                    <div class="tab-pane fade show active" id="general-tab">
+                      <div class="container" style="margin-bottom: 1rem">
+                        <div class="row" style="margin-bottom: 0.25rem">
+                          <div class="col-sm"><b style="font-size: larger;">School's Info:</b></div>
+                        </div>
+                        <div class="row" style="margin-bottom: 0.25rem">
+                          <div class="col-sm-7"><b style="color: #858796;">Level: </b>Trung học phổ thông</div>
+                          <div class="col-sm-5"><b style="color: #858796;">Type: </b>Công lập</div>
+                        </div>
+                        <div class="row" style="margin-bottom: 0.25rem">
+                          <div class="col-sm-7"><b style="color: #858796;">Scale: </b>Vừa</div>
+                          <div class="col-sm-5"><b style="color: #858796;">Status: </b>Cũ</div>
+                        </div>
+                        <div class="row" style="margin-bottom: 0.25rem">
+                          <div class="col-sm-7"><b style="color: #858796;">Address: </b>172 Đỗ Xuân Hợp, P.Phú Hữu, Q9</div>
+                          <div class="col-sm-5"><b style="color: #858796;">Tel: </b>028 3123.456</div>
+                        </div>
+                        <div class="row">
+                          <div class="col-sm"><b style="color: #858796;">Description: </b>--</div>
+                        </div>
+                      </div>
+                      <!-- <br/> -->
+                      <hr class="sidebar-divider my-0" style="width: 20rem; align-items: center;" />
+                      <!-- <br/> -->
+                      <div class="container" style="margin-top: 1rem">
+                        <div class="row" style="margin-bottom: 0.25rem">
+                          <div class="col-sm"><b style="font-size: larger;">Principal's Info:</b></div>
+                        </div>
+                        <div class="row" style="margin-bottom: 0.25rem">
+                          <div class="col-sm">
+                            <b style="color: #858796;">Full name: </b>
+                            <b style="color: #4e73df;">Thầy Nguyễn Hoàng Huy</b></div>
+                        </div>
+                        <div class="row" style="margin-bottom: 0.25rem">
+                          <div class="col-sm"><b style="color: #858796;">Email: </b>huynh.pth@gmail.com</div>
+                          <div class="col-sm"><b style="color: #858796;">Phone: </b>0987.654.321</div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- History Tab-->
+                    <div class="tab-pane fade" id="history-tab">
+                      <!--Filters-->
+                      <div class="container" style="margin-bottom: 0.7rem; padding-left: 0">
+                        <div class="row" style="margin-bottom: 0.5rem">
+                          <div class="col-sm">
+                            School year <br />
+                            <select class="custom-select" style="width: 10.5rem;">
+                              <option selected></option>
+                              <option>2020-2021</option>
+                              <option>2019-2020</option>
+                              <option>2018-2019</option>
+                            </select>
+                          </div>
+                          <div class="col-sm">
+                            PIC <br />
+                            <select class="custom-select" style="width: 10.5rem">
+                              <option selected></option>
+                              <option>Duy Tiến</option>
+                              <option>Tuyền</option>
+                              <option>Thái</option>
+                            </select>
+                          </div>
+                          <div class="col-sm">
+                            Start date
+                            <input type="date" class="form-control" data-provide="datepicker" style="width: 10.5rem" />
+                          </div>
+                          <div class="col-sm">
+                            End date
+                            <input type="date" class="form-control" data-provide="datepicker" style="width: 10.5rem" />
+                          </div>
+                        </div>
+                      </div>
+                      <br/>
+                      <div class="table-responsive">
+                        <table class="table table-striped table-sm dt-responsive" id="dataTable" width="100%" cellspacing="0">
+                          <thead class="thead-dark">
+                            <tr>
+                              <th></th>
+                              <th>School year</th>
+                              <th>PIC</th>
+                              <th>Purpose</th>
+                              <th>Status</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr class="accordion-toggle" data-toggle="collapse" data-target="#report-1">
+                              <td><span><i class="fas fa-chevron-down"></i></span></td>
+                              <td>2020-2021</td>
+                              <td>Thái</td>
+                              <td>Chăm sóc</td>
+                              <td><span class="badge badge-info" style="width: 5rem">In progress</span></td>
+                            </tr>
+                            <!--Nested Reports table for row 1-->
+                            <tr class="collapse" id="report-1">
+                              <td colspan="12">
+                                <b style="margin-left: 0.5rem;">Reports</b>
+                                <div class="table-responsive">
+                                  <table class="table table-striped table-sm dt-responsive" id="dataTable" cellspacing="0" style="width: 98%; margin-left: 0.5rem;">
+                                    <thead class="thead-dark">
+                                      <tr>
+                                        <th>Date</th>
+                                        <th>Result</th>
+                                        <th>Description</th>
+                                        <th>Comment</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                      <tr>
+                                        <td>17/02/2021</td>
+                                        <td>Đã gặp HT</td>
+                                        <td>Đã tặng quà Tết cho thầy</td>
+                                        <td></td>
+                                      </tr>
+                                      <tr>
+                                        <td>09/02/2021</td>
+                                        <td>Chưa gặp HT</td>
+                                        <td>Thầy bận họp, hẹn qua Tết gặp</td>
+                                        <td></td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr class="accordion-toggle" data-toggle="collapse" data-target="#report-2">
+                              <td><span><i class="fas fa-chevron-down"></i></span></td>
+                              <td>2019-2020</td>
+                              <td>Tuyền</td>
+                              <td>Tái ký</td>
+                              <td><span class="badge badge-danger" style="width: 3.5rem">Failed</span></td>
+                            </tr>
+                            <!--Nested Reports table for row 2-->
+                            <tr class="collapse" id="report-2">
+                              <td colspan="12">
+                                <b style="margin-left: 0.5rem;">Reports</b>
+                                <div class="table-responsive">
+                                  <table class="table table-striped table-sm dt-responsive" id="dataTable" cellspacing="0" style="width: 98%; margin-left: 0.5rem;">
+                                    <thead class="thead-dark">
+                                      <tr>
+                                        <th>Date</th>
+                                        <th>Result</th>
+                                        <th>Description</th>
+                                        <th>Comment</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                      <tr>
+                                        <td>01/09/2019</td>
+                                        <td>Đã gặp HT</td>
+                                        <td>Thầy từ chối, hẹn năm sau</td>
+                                        <td></td>
+                                      </tr>
+                                      <tr>
+                                        <td>15/08/2019</td>
+                                        <td>Chưa gặp HT</td>
+                                        <td>Thầy bận việc đột xuất</td>
+                                        <td></td>
+                                      </tr>
+                                      <tr>
+                                        <td>30/07/2019</td>
+                                        <td>Đã gặp HT</td>
+                                        <td>Thầy nói cần suy nghĩ thêm</td>
+                                        <td></td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr class="accordion-toggle" data-toggle="collapse" data-target="#report-3">
+                              <td><span><i class="fas fa-chevron-down"></i></span></td>
+                              <td>2019-2020</td>
+                              <td>Thái</td>
+                              <td>Chăm sóc</td>
+                              <td><span class="badge badge-success" style="width: 3.5rem">Done</span></td>
+                            </tr>
+                            <tr class="collapse" id="report-3">
+                              <td colspan="12">Waiting for data...</td>
+                            </tr>
+                            <tr class="accordion-toggle" data-toggle="collapse" data-target="#report-4">
+                              <td><span><i class="fas fa-chevron-down"></i></span></td>
+                              <td>2018-2019</td>
+                              <td>Duy Tiến</td>
+                              <td>Sales mới</td>
+                              <td><span class="badge badge-success" style="width: 3.5rem">Done</span></td>
+                            </tr>
+                            <tr class="collapse" id="report-4">
+                              <td colspan="12">Waiting for data...</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+
+                <!-- Right side - Task's details -->
+                <div class="col-4">
+                  <div class="container" style="padding-left: 20px">
+                    <div class="row" style="margin-bottom: 0.5rem">
+                      <div class="col">
+                        <b>Purpose:</b> <br />
+                        <input type="text" class="form-control" value="Chăm sóc" readonly style="width: 8rem" />
+                      </div>
+                      <div class="col">
+                        <b>Status:</b> <br />
+                        <span class="badge badge-info" style="width: 8rem; font-size: 1.05em; ">In progress</span>
+                      </div>
+                    </div>
+                    <div class="row" style="margin-bottom: 0.5rem">
+                      <div class="col">
+                        <b>PIC:</b> <br />
+                        <input type="text" class="form-control" value="Thái" readonly style="width: 8rem" />
+                      </div>
+                      <div class="col">
+                        <b>Previous PIC:</b> <br />
+                        <input type="text" class="form-control" value="Tuyền" readonly style="width: 8rem" />
+                      </div>
+                    </div>
+                    <div class="row" style="margin-bottom: 0.5rem">
+                      <div class="col">
+                        <b>Start date:</b>
+                        <input type="text" class="form-control" value="01/02/2021	" readonly style="width: 8rem" />
+                      </div>
+                      <div class="col">
+                        <b>End date:</b>
+                        <input type="text" class="form-control" value="01/03/2021" readonly style="width: 8rem" />
+                      </div>
+                    </div>
+                    <div class="row" style="margin-bottom: 1rem">
+                      <div class="col">
+                        <b>Note:</b>
+                        <textarea class="form-control" rows="2" readonly></textarea>
+                      </div>
+                    </div>
+                    
+                    <hr class="sidebar-divider my-0" style="width: 20rem; align-items: center;" />
+
+                    <div class="row" style="margin-top: 0.8rem">
+                      <div class="col-10">
+                        <b>Result:</b>
+                        <br/>
+                        <i style="color: #858796">The target school decided to...</i>
+                        <button class="btn btn-success" type="button"><i class="fas fa-check"></i>&nbsp; Collaborate</button>
+                        &nbsp; &nbsp; 
+                        <button class="btn btn-danger" type="button"><i class="fas fa-times"></i>&nbsp; Reject</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-secondary" type="button" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin-2.min.js"></script>
+
+    <!-- Page level plugins -->
+    <script src="vendor/datatables/jquery.dataTables.min.js"></script>
+    <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="js/demo/datatables-demo.js"></script>
+  </body>
+</html>
